@@ -3,87 +3,116 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Work">
-	<section class="section-padding">
-		<h1 class="text-6xl md:text-8xl mb-12">Case Studies</h1>
-		<div class="grid gap-16">
+	<section class="section-container">
+		<h1 class="font-display italic text-[48px] md:text-[80px] leading-[1.1] tracking-luxury-heading text-[#f0f0f0] mb-20">
+			Case Studies
+		</h1>
+		
+		<div class="space-y-24">
 			<!-- KodeKloud -->
-			<div class="portfolio-card grid md:grid-cols-2 gap-8 p-8 md:p-12">
-				<div class="space-y-6">
-					<h2 class="text-4xl">KodeKloud</h2>
-					<p class="text-lg text-portfolio-muted font-light leading-relaxed">
-						Led the creative transformation for one of the leading DevOps learning platforms. 
-						Implemented GenAI-native production workflows that increased output by 300% while maintaining premium quality.
-					</p>
-					<ul class="space-y-4">
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>Scaled subscriber base from 125K to 300K+</span>
-						</li>
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>18% CTR improvement via visual strategy refactor</span>
-						</li>
-					</ul>
-					<div class="pt-4">
-						<span class="px-4 py-2 bg-portfolio-mid/30 text-xs rounded-full uppercase tracking-widest">Case study coming soon</span>
-					</div>
+			<div class="space-y-6">
+				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
+					<h2 class="text-[24px] font-medium text-[#f0f0f0]">KodeKloud</h2>
+					<span class="text-[13px] text-luxury-muted">Dec 2022 – Oct 2025</span>
 				</div>
-				<div class="bg-portfolio-mid/20 rounded-xl aspect-video flex items-center justify-center border border-portfolio-mid/30 italic text-portfolio-muted">
-					Visual Asset Placeholder
+				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Associate Creative Director</p>
+				<p class="text-[17px] font-light leading-relaxed text-luxury-muted mb-6">
+					Led the creative transformation for one of the leading DevOps learning platforms. Implemented GenAI-native production workflows that increased output by 300% while maintaining premium quality.
+				</p>
+				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+					<li>Led lean creative team of 3, 200+ brand assets annually</li>
+					<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
+					<li>Drove cross-channel campaigns — CTR improved 18%</li>
+					<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
+					<li>Managed freelancer relationships and vendor briefs</li>
+				</ul>
+				<div class="flex flex-wrap gap-2 mb-8">
+					{['Brand Strategy', 'YouTube Growth', 'GenAI Workflow', 'Team Leadership', 'Paid Ads Creative', 'Data-Driven'].map(tag => (
+						<span class="luxury-tag">{tag}</span>
+					))}
+				</div>
+				<div class="bg-white/5 border border-white/10 rounded-lg p-6 text-center italic text-luxury-muted text-sm">
+					Detailed case study coming soon
 				</div>
 			</div>
 
 			<!-- Simplilearn -->
-			<div class="portfolio-card grid md:grid-cols-2 gap-8 p-8 md:p-12">
-				<div class="space-y-6">
-					<h2 class="text-4xl">Simplilearn</h2>
-					<p class="text-lg text-portfolio-muted font-light leading-relaxed">
-						Directed a diverse team of 8 creative professionals across video, design, and motion. 
-						Orchestrated large-scale content campaigns that drove massive audience growth in the competitive professional certification space.
-					</p>
-					<ul class="space-y-4">
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>500K to 2M+ subscriber growth milestone</span>
-						</li>
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>Consistently achieved 35%+ average view rates</span>
-						</li>
-					</ul>
-					<div class="pt-4">
-						<span class="px-4 py-2 bg-portfolio-mid/30 text-xs rounded-full uppercase tracking-widest">Case study coming soon</span>
-					</div>
+			<div class="space-y-6">
+				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
+					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Simplilearn</h2>
+					<span class="text-[13px] text-luxury-muted">Jan 2021 – Dec 2022</span>
 				</div>
-				<div class="bg-portfolio-mid/20 rounded-xl aspect-video flex items-center justify-center border border-portfolio-mid/30 italic text-portfolio-muted">
-					Visual Asset Placeholder
+				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Assistant Manager – Motion Graphic Artist</p>
+				<p class="text-[17px] font-light leading-relaxed text-luxury-muted mb-6">
+					Directed a diverse team of 8 creative professionals across video, design, and motion. Orchestrated large-scale content campaigns that drove massive audience growth in the professional certification space.
+				</p>
+				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+					<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
+					<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
+					<li>Course promo videos at 35%+ average view rate</li>
+					<li>Reduced turnaround 25% via standardized templates</li>
+				</ul>
+				<div class="flex flex-wrap gap-2 mb-8">
+					{['People Management', 'Video Production', 'YouTube Growth', 'Team Leadership', 'A/B Testing', 'Motion Graphics'].map(tag => (
+						<span class="luxury-tag">{tag}</span>
+					))}
+				</div>
+				<div class="bg-white/5 border border-white/10 rounded-lg p-6 text-center italic text-luxury-muted text-sm">
+					Detailed case study coming soon
+				</div>
+			</div>
+
+			<!-- Zolostays -->
+			<div class="space-y-6">
+				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
+					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Zolostays</h2>
+					<span class="text-[13px] text-luxury-muted">Sep 2020 – Jan 2021</span>
+				</div>
+				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Creative Producer</p>
+				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+					<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
+				</ul>
+				<div class="flex flex-wrap gap-2">
+					{['Campaign Management', 'Creative Direction', 'Video Production'].map(tag => (
+						<span class="luxury-tag">{tag}</span>
+					))}
 				</div>
 			</div>
 
 			<!-- Webenza -->
-			<div class="portfolio-card grid md:grid-cols-2 gap-8 p-8 md:p-12">
-				<div class="space-y-6">
-					<h2 class="text-4xl">Webenza</h2>
-					<p class="text-lg text-portfolio-muted font-light leading-relaxed">
-						Client-facing leadership managing creative requirements for over 50 global brands. 
-						Developed holistic digital identities and high-performing advertising campaigns for market leaders.
-					</p>
-					<ul class="space-y-4">
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>Managed Amazon, Bosch, and Schneider Electric accounts</span>
-						</li>
-						<li class="flex items-center gap-3 text-sm">
-							<span class="h-1.5 w-1.5 rounded-full bg-portfolio-accent"></span>
-							<span>Delivered 100+ multi-channel integrated campaigns</span>
-						</li>
-					</ul>
-					<div class="pt-4">
-						<span class="px-4 py-2 bg-portfolio-mid/30 text-xs rounded-full uppercase tracking-widest">Case study coming soon</span>
-					</div>
+			<div class="space-y-6">
+				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
+					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Webenza</h2>
+					<span class="text-[13px] text-luxury-muted">Nov 2018 – Sep 2020</span>
 				</div>
-				<div class="bg-portfolio-mid/20 rounded-xl aspect-video flex items-center justify-center border border-portfolio-mid/30 italic text-portfolio-muted">
-					Visual Asset Placeholder
+				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Executive – Digital Media & Design</p>
+				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+					<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
+					<li>A/B tests on hooks, thumbnails, CTAs</li>
+					<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
+				</ul>
+				<div class="flex flex-wrap gap-2">
+					{['Multi-client Ops', 'A/B Testing', 'Creative Ops', 'Storytelling'].map(tag => (
+						<span class="luxury-tag">{tag}</span>
+					))}
+				</div>
+			</div>
+
+			<!-- BYJU'S -->
+			<div class="space-y-6">
+				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
+					<h2 class="text-[24px] font-medium text-[#f0f0f0]">BYJU'S</h2>
+					<span class="text-[13px] text-luxury-muted">Aug 2017 – Oct 2018</span>
+				</div>
+				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Creative Associate</p>
+				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+					<li>Motion graphics and animation for K-12 STEM curriculum</li>
+					<li>Collaborated with subject matter experts and content R&D</li>
+				</ul>
+				<div class="flex flex-wrap gap-2">
+					{['Motion Graphics', 'Video Editing', 'Post-Production', 'Storytelling'].map(tag => (
+						<span class="luxury-tag">{tag}</span>
+					))}
 				</div>
 			</div>
 		</div>

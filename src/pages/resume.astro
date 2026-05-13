@@ -3,71 +3,207 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Resume">
-	<section class="section-padding">
-		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+	<section class="section-container">
+		<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
 			<div>
-				<h1 class="text-6xl md:text-8xl mb-4">Resume</h1>
-				<p class="text-portfolio-muted">Creative Lead · Bangalore, India</p>
+				<h1 class="font-display italic text-[48px] md:text-[80px] leading-[1.1] tracking-luxury-heading text-[#f0f0f0] mb-4">
+					Resume
+				</h1>
+				<p class="text-luxury-muted text-[15px] font-light">Creative Strategy & Brand Content Lead</p>
 			</div>
-			<a href="#" class="px-6 py-3 border border-portfolio-accent text-portfolio-accent rounded-full text-sm font-medium hover:bg-portfolio-accent hover:text-white transition-all">Download PDF</a>
+			<a href="/Devanshu_Pratap_Singh___Creative_Strategy___Brand_Content_Lead.pdf" class="px-6 py-3 border border-luxury-accent text-luxury-accent rounded-full text-[13px] font-medium hover:bg-luxury-accent hover:text-white transition-all duration-300">
+				Download PDF
+			</a>
 		</div>
 
-		<div class="grid md:grid-cols-3 gap-12">
-			<!-- Left Sidebar: Summary & Skills -->
-			<div class="space-y-12">
-				<div>
-					<h2 class="text-2xl mb-4 uppercase tracking-tighter font-semibold">Summary</h2>
-					<p class="text-portfolio-muted font-light leading-relaxed">
-						Visionary Creative Lead with 8+ years of experience in high-growth EdTech and SaaS environments. 
-						Expert at building and scaling creative teams, implementing GenAI workflows, and delivering world-class visual content.
-					</p>
+		<!-- SUMMARY -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-6">Summary</span>
+			<p class="text-[17px] font-light leading-relaxed text-luxury-muted">
+				Creative strategy and design leader with 8+ years building brand systems, visual frameworks, and campaign direction across EdTech, SaaS, and agency environments. Translates brand positioning and business objectives into scalable design systems — from visual identity and brand guidelines to cross-channel campaign execution.
+			</p>
+		</div>
+
+		<!-- EXPERIENCE -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-10">Experience</span>
+			
+			<div class="space-y-16">
+				<!-- KodeKloud -->
+				<div class="space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-[18px] font-medium text-[#f0f0f0]">Associate Creative Director</h3>
+							<p class="text-luxury-accent text-[14px] mt-1">KodeKloud</p>
+						</div>
+						<p class="text-[12px] text-luxury-muted uppercase tracking-wider">Dec 2022 – Oct 2025</p>
+					</div>
+					<ul class="space-y-2 text-[15px] text-luxury-muted font-light list-disc list-inside">
+						<li>Led lean creative team of 3, 200+ brand assets annually</li>
+						<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
+						<li>Drove cross-channel campaigns — CTR improved 18%</li>
+						<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
+						<li>Managed freelancer relationships and vendor briefs</li>
+					</ul>
 				</div>
 
-				<div>
-					<h2 class="text-2xl mb-4 uppercase tracking-tighter font-semibold">Core Skills</h2>
-					<div class="flex flex-wrap gap-2">
-						{['Team Leadership', 'GenAI Production', 'Creative Strategy', 'Video Production', 'Art Direction', 'Stakeholder Management', 'Process Optimization', 'Brand Identity'].map(skill => (
-							<span class="px-3 py-1 bg-portfolio-surface border border-portfolio-mid/30 rounded-full text-xs text-portfolio-muted">{skill}</span>
-						))}
+				<!-- Simplilearn -->
+				<div class="space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-[18px] font-medium text-[#f0f0f0]">Assistant Manager – Motion Graphic Artist</h3>
+							<p class="text-luxury-accent text-[14px] mt-1">Simplilearn</p>
+						</div>
+						<p class="text-[12px] text-luxury-muted uppercase tracking-wider">Jan 2021 – Dec 2022</p>
+					</div>
+					<ul class="space-y-2 text-[15px] text-luxury-muted font-light list-disc list-inside">
+						<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
+						<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
+						<li>Course promo videos at 35%+ average view rate</li>
+						<li>Reduced turnaround 25% via standardized templates</li>
+					</ul>
+				</div>
+
+				<!-- Zolostays -->
+				<div class="space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-[18px] font-medium text-[#f0f0f0]">Creative Producer (Contract)</h3>
+							<p class="text-luxury-accent text-[14px] mt-1">Zolostays</p>
+						</div>
+						<p class="text-[12px] text-luxury-muted uppercase tracking-wider">Sep 2020 – Jan 2021</p>
+					</div>
+					<ul class="space-y-2 text-[15px] text-luxury-muted font-light list-disc list-inside">
+						<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
+					</ul>
+				</div>
+
+				<!-- Webenza -->
+				<div class="space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-[18px] font-medium text-[#f0f0f0]">Executive – Digital Media & Design</h3>
+							<p class="text-luxury-accent text-[14px] mt-1">Webenza</p>
+						</div>
+						<p class="text-[12px] text-luxury-muted uppercase tracking-wider">Nov 2018 – Sep 2020</p>
+					</div>
+					<ul class="space-y-2 text-[15px] text-luxury-muted font-light list-disc list-inside">
+						<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
+						<li>A/B tests on hooks, thumbnails, CTAs</li>
+						<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
+					</ul>
+				</div>
+
+				<!-- BYJU'S -->
+				<div class="space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-[18px] font-medium text-[#f0f0f0]">Creative Associate</h3>
+							<p class="text-luxury-accent text-[14px] mt-1">BYJU'S</p>
+						</div>
+						<p class="text-[12px] text-luxury-muted uppercase tracking-wider">Aug 2017 – Oct 2018</p>
+					</div>
+					<ul class="space-y-2 text-[15px] text-luxury-muted font-light list-disc list-inside">
+						<li>Motion graphics and animation for K-12 STEM curriculum</li>
+						<li>Collaborated with subject matter experts and content R&D</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- CORE COMPETENCIES -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-8">Core Competencies</span>
+			<div class="flex flex-wrap gap-3">
+				{[
+					'Brand Strategy', 'Design Strategy', 'Creative Direction', 'Visual Design Systems', 'Brand Identity', 
+					'Brand Communication', 'Campaign Design', 'Motion Graphics', 'Video Production', 'Creative Ops', 
+					'Performance Creative & A/B Testing', 'GenAI & AI Workflows', 'Team Leadership', 'People Management', 
+					'Stakeholder Management', 'Project Management', 'Social Media Strategy', 'Marketing Communication'
+				].map(skill => (
+					<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-[12px] text-luxury-muted font-light">
+						{skill}
+					</span>
+				))}
+			</div>
+		</div>
+
+		<!-- CERTIFICATIONS -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-8">Certifications</span>
+			<div class="grid gap-4">
+				{[
+					{ name: 'Strategic Brand Management', org: 'SP Jain × Coursera', year: '2026', link: 'https://coursera.org/share/e3da0db7473132149ef8e42fc53e1861' },
+					{ name: 'Agentic AI Creative Workflow', org: 'Adobe × Coursera', year: '2026', link: 'https://coursera.org/share/cecaf3aa93b6f3e45a8d27fc063c8c51' },
+					{ name: 'ChatGPT & Zapier: Agentic AI', org: 'Vanderbilt × Coursera', year: '2026', link: 'https://coursera.org/share/649807601f3eb44e86669a165b7dc66a' },
+					{ name: 'IBM AI Product Manager', org: 'IBM × Coursera', year: '2026', link: 'https://coursera.org/share/bf05c2f1b0dc04a181da7121c502d497' },
+					{ name: 'Google AI Essentials', org: 'Google × Coursera', year: '2026', link: 'https://coursera.org/share/de4a151ddd2bdcdcc8ee08c09fc00a86' },
+					{ name: 'SaaS Explainer Video', org: 'Udemy', year: '2026', link: 'https://ude.my/UC-e138018a-c5d2-407f-b360-4b8b1d434b56' },
+					{ name: 'Inbound Marketing Certified', org: 'HubSpot Academy', year: '2025', link: 'https://app-na2.hubspot.com/academy/achievements/pypkq96l/en/1/devanshu-singh/inbound-marketing-certified' }
+				].map(cert => (
+					<div class="flex justify-between items-center group">
+						<div>
+							<a href={cert.link} target="_blank" class="text-[15px] font-medium text-[#f0f0f0] group-hover:text-luxury-accent transition-colors underline decoration-luxury-border underline-offset-4">{cert.name}</a>
+							<p class="text-[12px] text-luxury-muted mt-1">{cert.org}</p>
+						</div>
+						<span class="text-[12px] text-luxury-muted">{cert.year}</span>
+					</div>
+				))}
+			</div>
+		</div>
+
+		<!-- EDUCATION -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-6">Education</span>
+			<div class="space-y-2">
+				<h3 class="text-[17px] font-medium text-[#f0f0f0]">B.Tech · Electrical Engineering</h3>
+				<p class="text-[14px] text-luxury-muted">JSS Academy of Technical Education · Noida, Delhi NCR</p>
+				<p class="text-[12px] text-luxury-muted">2011–2015</p>
+			</div>
+		</div>
+
+		<!-- TOOLS -->
+		<div class="mb-20">
+			<span class="all-caps-label block mb-8">Tools</span>
+			<div class="grid md:grid-cols-2 gap-12">
+				<div class="space-y-6">
+					<div>
+						<p class="text-[13px] font-medium text-[#f0f0f0] mb-3">GenAI & AI</p>
+						<p class="text-[14px] text-luxury-muted leading-relaxed">Claude Code · Google AI Studio · AntiGravity (Google) · Zapier AI Workflows · N8N · ElevenLabs · Midjourney · Adobe Firefly · Descript</p>
+					</div>
+					<div>
+						<p class="text-[13px] font-medium text-[#f0f0f0] mb-3">Creative Suite</p>
+						<p class="text-[14px] text-luxury-muted leading-relaxed">Adobe Creative Cloud · Photoshop & Illustrator · InDesign · After Effects & Premiere Pro · Figma · Canva</p>
+					</div>
+				</div>
+				<div class="space-y-6">
+					<div>
+						<p class="text-[13px] font-medium text-[#f0f0f0] mb-3">Productivity & Ops</p>
+						<p class="text-[14px] text-luxury-muted leading-relaxed">Google Workspace · ClickUp · Slack · MCP (Model Context Protocol) · Frame.io</p>
+					</div>
+					<div>
+						<p class="text-[13px] font-medium text-[#f0f0f0] mb-3">Analytics</p>
+						<p class="text-[14px] text-luxury-muted leading-relaxed">Google Analytics 4 · YouTube Studio · HubSpot Analytics</p>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<!-- Main Content: Experience -->
-			<div class="md:col-span-2 space-y-12">
-				<h2 class="text-2xl mb-8 uppercase tracking-tighter font-semibold">Experience</h2>
-				
-				<div class="portfolio-card p-8 space-y-4">
-					<div class="flex justify-between items-start">
-						<div>
-							<h3 class="text-2xl">Creative Lead</h3>
-							<p class="text-portfolio-accent font-medium">KodeKloud</p>
-						</div>
-						<p class="text-sm text-portfolio-muted">2023 — Present</p>
-					</div>
-					<p class="text-portfolio-muted font-light">Leading the creative engine for a global learning platform. Spearheading the integration of Generative AI into content pipelines, achieving massive efficiency gains while elevating visual standards.</p>
+		<!-- STRENGTHS -->
+		<div>
+			<span class="all-caps-label block mb-8">Strengths</span>
+			<div class="space-y-8">
+				<div>
+					<h4 class="text-[15px] font-medium text-[#f0f0f0] mb-2">People & Stakeholder Leadership</h4>
+					<p class="text-[14px] text-luxury-muted font-light leading-relaxed">Led teams of 3–8, managed external vendors, aligned cross-functional stakeholders from brief through delivery.</p>
 				</div>
-
-				<div class="portfolio-card p-8 space-y-4">
-					<div class="flex justify-between items-start">
-						<div>
-							<h3 class="text-2xl">Senior Creative Associate</h3>
-							<p class="text-portfolio-accent font-medium">Simplilearn</p>
-						</div>
-						<p class="text-sm text-portfolio-muted">2019 — 2023</p>
-					</div>
-					<p class="text-portfolio-muted font-light">Managed a cross-functional team of 8. Responsible for end-to-end creative strategy for high-impact growth campaigns and educational content.</p>
+				<div>
+					<h4 class="text-[15px] font-medium text-[#f0f0f0] mb-2">GenAI-Native Production</h4>
+					<p class="text-[14px] text-luxury-muted font-light leading-relaxed">Agentic AI workflows that cut cost without cutting quality or brand standards.</p>
 				</div>
-
-				<div class="portfolio-card p-8 space-y-4">
-					<div class="flex justify-between items-start">
-						<div>
-							<h3 class="text-2xl">Creative Designer</h3>
-							<p class="text-portfolio-accent font-medium">Webenza</p>
-						</div>
-						<p class="text-sm text-portfolio-muted">2017 — 2019</p>
-					</div>
-					<p class="text-portfolio-muted font-light">Executed digital campaigns for premium global brands including Amazon, Bosch, and Schneider Electric.</p>
+				<div>
+					<h4 class="text-[15px] font-medium text-[#f0f0f0] mb-2">Data-Informed Creative</h4>
+					<p class="text-[14px] text-luxury-muted font-light leading-relaxed">A/B testing and analytics driving every creative decision — not gut feel.</p>
 				</div>
 			</div>
 		</div>

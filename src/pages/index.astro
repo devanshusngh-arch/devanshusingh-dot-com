@@ -3,81 +3,155 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Creative Lead">
-	<section class="min-h-[80vh] flex flex-col justify-center section-padding">
-		<h1 class="text-7xl md:text-9xl mb-4 leading-tight">
-			Devanshu <br />
-			Pratap Singh
+	<!-- HERO -->
+	<section class="min-h-[70vh] flex flex-col justify-center px-6 max-w-luxury mx-auto">
+		<span class="all-caps-label mb-4">CREATIVE LEAD · BANGALORE</span>
+		<h1 class="font-display italic text-[48px] md:text-[80px] leading-[1.1] tracking-luxury-heading text-[#f0f0f0] mb-6">
+			Devanshu Pratap Singh
 		</h1>
-		<p class="text-xl md:text-2xl font-light text-portfolio-muted mb-8 max-w-2xl">
-			Creative Lead · Team Leadership & <span class="text-white">GenAI-Native Production</span>
+		<p class="font-body font-light text-[18px] md:text-[20px] text-luxury-muted mb-10 max-w-md">
+			Creative Strategy & Brand Content Lead
 		</p>
-		<div class="flex flex-wrap gap-4">
-			<a href="/work" class="px-8 py-4 bg-portfolio-accent text-white rounded-full font-medium hover:brightness-110 transition-all">View Work</a>
-			<a href="/resume" class="px-8 py-4 border border-portfolio-mid text-white rounded-full font-medium hover:bg-portfolio-mid/20 transition-all">View Resume</a>
+		<div class="flex gap-8">
+			<a href="/work" class="font-body font-medium text-[15px] text-luxury-accent hover:text-luxury-accent-hover transition-colors">View Work →</a>
+			<a href="/resume" class="font-body font-medium text-[15px] text-luxury-accent hover:text-luxury-accent-hover transition-colors">View Resume →</a>
 		</div>
 	</section>
 
-	<div class="h-[1px] w-full bg-signature-gradient opacity-30"></div>
+	<!-- ABOUT -->
+	<section class="section-container">
+		<span class="all-caps-label block mb-8">ABOUT</span>
+		<p class="text-[17px] font-light leading-relaxed text-luxury-muted">
+			Creative strategy and design leader with 8+ years building brand systems, visual frameworks, and campaign direction across EdTech, SaaS, and agency environments. Translates brand positioning and business objectives into scalable design systems — from visual identity and brand guidelines to cross-channel campaign execution. Led teams of 3–8 designers, managed multi-client creative production at agency scale (50+ clients including Amazon, Bosch, and Schneider Electric), and built standardized design workflows adopted org-wide. Brings GenAI-augmented production capabilities that triple creative output without compromising brand quality or consistency.
+		</p>
+	</section>
 
-	<section class="section-padding">
-		<div class="grid md:grid-cols-3 gap-12 items-start">
-			<div class="md:col-span-2">
-				<h2 class="text-4xl mb-6">Bio</h2>
-				<p class="text-xl font-light leading-relaxed text-portfolio-muted">
-					With over <span class="text-white">8 years of experience</span> in EdTech and SaaS, I specialize in leading creative teams and scaling content production. 
-					As a <span class="text-white">GenAI-native lead</span>, I bridge the gap between human creativity and technological scale.
-				</p>
+	<!-- SELECTED WORK -->
+	<section class="section-container">
+		<span class="all-caps-label block mb-8">SELECTED WORK</span>
+		
+		<div class="space-y-0">
+			<!-- Row 1 -->
+			<div class="work-row">
+				<div class="space-y-2 max-w-xl">
+					<h3 class="text-[17px] font-medium text-[#f0f0f0]">Associate Creative Director</h3>
+					<p class="text-[13px] text-luxury-muted mb-4">KodeKloud · Dec 2022 – Oct 2025</p>
+					<ul class="space-y-2 text-[14px] text-luxury-muted font-light list-disc list-inside">
+						<li>Led lean creative team of 3, 200+ brand assets annually</li>
+						<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
+						<li>Drove cross-channel campaigns — CTR improved 18%</li>
+						<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
+						<li>Managed freelancer relationships and vendor briefs</li>
+					</ul>
+					<div class="flex flex-wrap gap-2 mt-6">
+						{['Brand Strategy', 'YouTube Growth', 'GenAI Workflow', 'Team Leadership', 'Paid Ads Creative', 'Data-Driven'].map(tag => (
+							<span class="luxury-tag">{tag}</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Row 2 -->
+			<div class="work-row">
+				<div class="space-y-2 max-w-xl">
+					<h3 class="text-[17px] font-medium text-[#f0f0f0]">Assistant Manager – Motion Graphic Artist</h3>
+					<p class="text-[13px] text-luxury-muted mb-4">Simplilearn · Jan 2021 – Dec 2022</p>
+					<ul class="space-y-2 text-[14px] text-luxury-muted font-light list-disc list-inside">
+						<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
+						<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
+						<li>Course promo videos at 35%+ average view rate</li>
+						<li>Reduced turnaround 25% via standardized templates</li>
+					</ul>
+					<div class="flex flex-wrap gap-2 mt-6">
+						{['People Management', 'Video Production', 'YouTube Growth', 'Team Leadership', 'A/B Testing', 'Motion Graphics'].map(tag => (
+							<span class="luxury-tag">{tag}</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Row 3 -->
+			<div class="work-row">
+				<div class="space-y-2 max-w-xl">
+					<h3 class="text-[17px] font-medium text-[#f0f0f0]">Creative Producer</h3>
+					<p class="text-[13px] text-luxury-muted mb-4">Zolostays · Sep 2020 – Jan 2021 · CONTRACT</p>
+					<ul class="space-y-2 text-[14px] text-luxury-muted font-light list-disc list-inside">
+						<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
+					</ul>
+					<div class="flex flex-wrap gap-2 mt-6">
+						{['Campaign Management', 'Creative Direction', 'Video Production'].map(tag => (
+							<span class="luxury-tag">{tag}</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Row 4 -->
+			<div class="work-row">
+				<div class="space-y-2 max-w-xl">
+					<h3 class="text-[17px] font-medium text-[#f0f0f0]">Executive – Digital Media & Design</h3>
+					<p class="text-[13px] text-luxury-muted mb-4">Webenza · Nov 2018 – Sep 2020</p>
+					<ul class="space-y-2 text-[14px] text-luxury-muted font-light list-disc list-inside">
+						<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
+						<li>A/B tests on hooks, thumbnails, CTAs</li>
+						<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
+					</ul>
+					<div class="flex flex-wrap gap-2 mt-6">
+						{['Multi-client Ops', 'A/B Testing', 'Creative Ops', 'Storytelling'].map(tag => (
+							<span class="luxury-tag">{tag}</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Row 5 -->
+			<div class="work-row border-b-0">
+				<div class="space-y-2 max-w-xl">
+					<h3 class="text-[17px] font-medium text-[#f0f0f0]">Creative Associate</h3>
+					<p class="text-[13px] text-luxury-muted mb-4">BYJU'S · Aug 2017 – Oct 2018</p>
+					<ul class="space-y-2 text-[14px] text-luxury-muted font-light list-disc list-inside">
+						<li>Motion graphics and animation for K-12 STEM curriculum</li>
+						<li>Collaborated with subject matter experts and content R&D</li>
+					</ul>
+					<div class="flex flex-wrap gap-2 mt-6">
+						{['Motion Graphics', 'Video Editing', 'Post-Production', 'Storytelling'].map(tag => (
+							<span class="luxury-tag">{tag}</span>
+						))}
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section class="section-padding">
-		<h2 class="text-4xl mb-12">Featured Work</h2>
-		<div class="grid md:grid-cols-3 gap-8">
-			<div class="portfolio-card p-8">
-				<h3 class="text-2xl mb-4">KodeKloud</h3>
-				<p class="text-sm text-portfolio-muted mb-6">Scaled YouTube presence and implemented GenAI workflows for content production.</p>
-				<div class="space-y-2">
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Subscribers</span>
-						<span class="text-sm font-semibold">125K → 300K+</span>
-					</div>
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">CTR Improve</span>
-						<span class="text-sm font-semibold">18%</span>
-					</div>
-				</div>
-			</div>
+	<!-- CORE COMPETENCIES -->
+	<section class="section-container">
+		<span class="all-caps-label block mb-8">CORE COMPETENCIES</span>
+		<div class="flex flex-wrap gap-3">
+			{[
+				'Brand Strategy', 'Design Strategy', 'Creative Direction', 'Visual Design Systems', 'Brand Identity', 
+				'Brand Communication', 'Campaign Design', 'Motion Graphics', 'Video Production', 'Creative Ops', 
+				'Performance Creative & A/B Testing', 'GenAI & AI Workflows', 'Team Leadership', 'People Management', 
+				'Stakeholder Management', 'Project Management', 'Social Media Strategy', 'Marketing Communication'
+			].map(skill => (
+				<span class="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-[12px] text-luxury-muted font-light">
+					{skill}
+				</span>
+			))}
+		</div>
+	</section>
 
-			<div class="portfolio-card p-8">
-				<h3 class="text-2xl mb-4">Simplilearn</h3>
-				<p class="text-sm text-portfolio-muted mb-6">Led a team of 8 creatives to drive exponential growth through strategic video production.</p>
-				<div class="space-y-2">
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Subscribers</span>
-						<span class="text-sm font-semibold">500K → 2M+</span>
-					</div>
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">View Rate</span>
-						<span class="text-sm font-semibold">35%+</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="portfolio-card p-8">
-				<h3 class="text-2xl mb-4">Webenza</h3>
-				<p class="text-sm text-portfolio-muted mb-6">Managed 50+ brand clients, delivering high-impact digital campaigns and creative assets.</p>
-				<div class="space-y-2">
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Clients</span>
-						<span class="text-sm font-semibold">50+ Brands</span>
-					</div>
-					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
-						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Key Partners</span>
-						<span class="text-sm font-semibold">Amazon, Bosch</span>
-					</div>
-				</div>
-			</div>
+	<!-- CONTACT TEASER -->
+	<section class="section-container text-center py-32">
+		<h2 class="font-display italic text-[42px] md:text-[64px] text-[#f0f0f0] mb-8">
+			Let's work together
+		</h2>
+		<div class="space-y-4">
+			<a href="mailto:devanshusngh@gmail.com" class="block text-[18px] text-luxury-accent hover:text-luxury-accent-hover transition-colors">
+				devanshusngh@gmail.com
+			</a>
+			<p class="text-[15px] text-luxury-muted">
+				+91 87505 88980
+			</p>
 		</div>
 	</section>
 </Layout>

@@ -4,30 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        'portfolio-bg': '#0f1a2e',
-        'portfolio-surface': '#18243d',
-        'portfolio-mid': '#344060',
-        'portfolio-accent': '#3b5ce4',
-        'portfolio-muted': '#6475a0',
-        'portfolio-white': '#ffffff',
-        'portfolio-rule': '#d0d5e8',
+        luxury: {
+          bg: '#0a0a0f',
+          surface: '#111118',
+          border: '#1e1e2e',
+          primary: '#f0f0f0',
+          muted: '#666680',
+          accent: '#3b5ce4',
+          'accent-hover': '#5070f0',
+        }
       },
       fontFamily: {
-        'display': ['"Instrument Serif"', 'serif'],
-        'body': ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
-      borderRadius: {
-        'portfolio': '16px',
-      },
-      backgroundImage: {
-        'signature-gradient': 'linear-gradient(180deg, #21c4d8 0%, #eea943 25%, #0598d3 50%, #c23764 75%, #843590 100%)',
-      },
-      borderWidth: {
-        'portfolio': '0.5px',
-      },
-      borderColor: {
-        'portfolio-card': '#dce3f4',
-      }
     },
   },
   plugins: [],
