@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Devanshu Pratap Singh</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-[#0f1a2e] text-white">
+		<div class="h-[3px] w-full bg-signature-gradient fixed top-0 left-0 z-50"></div>
+		
+		<nav class="flex items-center justify-between px-6 md:px-12 py-8 max-w-7xl mx-auto">
+			<a href="/" class="text-2xl font-display tracking-tight">DS</a>
+			<div class="space-x-8 text-sm font-medium">
+				<a href="/work" class="hover:text-portfolio-accent transition-colors">Work</a>
+				<a href="/resume" class="hover:text-portfolio-accent transition-colors">Resume</a>
+				<a href="/contact" class="hover:text-portfolio-accent transition-colors text-portfolio-accent">Contact</a>
+			</div>
+		</nav>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="border-t border-portfolio-mid/20 mt-20">
+			<div class="section-padding flex flex-col md:flex-row justify-between items-center gap-6 py-12">
+				<div class="flex gap-6 text-sm text-portfolio-muted">
+					<a href="mailto:devanshusngh@gmail.com" class="hover:text-white transition-colors">devanshusngh@gmail.com</a>
+					<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+				</div>
+				<p class="text-xs text-portfolio-muted">© 2026 Devanshu Pratap Singh. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>

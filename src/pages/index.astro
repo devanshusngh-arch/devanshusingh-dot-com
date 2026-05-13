@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Creative Lead">
+	<section class="min-h-[80vh] flex flex-col justify-center section-padding">
+		<h1 class="text-7xl md:text-9xl mb-4 leading-tight">
+			Devanshu <br />
+			Pratap Singh
+		</h1>
+		<p class="text-xl md:text-2xl font-light text-portfolio-muted mb-8 max-w-2xl">
+			Creative Lead · Team Leadership & <span class="text-white">GenAI-Native Production</span>
+		</p>
+		<div class="flex flex-wrap gap-4">
+			<a href="/work" class="px-8 py-4 bg-portfolio-accent text-white rounded-full font-medium hover:brightness-110 transition-all">View Work</a>
+			<a href="/resume" class="px-8 py-4 border border-portfolio-mid text-white rounded-full font-medium hover:bg-portfolio-mid/20 transition-all">View Resume</a>
+		</div>
+	</section>
+
+	<div class="h-[1px] w-full bg-signature-gradient opacity-30"></div>
+
+	<section class="section-padding">
+		<div class="grid md:grid-cols-3 gap-12 items-start">
+			<div class="md:col-span-2">
+				<h2 class="text-4xl mb-6">Bio</h2>
+				<p class="text-xl font-light leading-relaxed text-portfolio-muted">
+					With over <span class="text-white">8 years of experience</span> in EdTech and SaaS, I specialize in leading creative teams and scaling content production. 
+					As a <span class="text-white">GenAI-native lead</span>, I bridge the gap between human creativity and technological scale.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section-padding">
+		<h2 class="text-4xl mb-12">Featured Work</h2>
+		<div class="grid md:grid-cols-3 gap-8">
+			<div class="portfolio-card p-8">
+				<h3 class="text-2xl mb-4">KodeKloud</h3>
+				<p class="text-sm text-portfolio-muted mb-6">Scaled YouTube presence and implemented GenAI workflows for content production.</p>
+				<div class="space-y-2">
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Subscribers</span>
+						<span class="text-sm font-semibold">125K → 300K+</span>
+					</div>
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">CTR Improve</span>
+						<span class="text-sm font-semibold">18%</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio-card p-8">
+				<h3 class="text-2xl mb-4">Simplilearn</h3>
+				<p class="text-sm text-portfolio-muted mb-6">Led a team of 8 creatives to drive exponential growth through strategic video production.</p>
+				<div class="space-y-2">
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Subscribers</span>
+						<span class="text-sm font-semibold">500K → 2M+</span>
+					</div>
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">View Rate</span>
+						<span class="text-sm font-semibold">35%+</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio-card p-8">
+				<h3 class="text-2xl mb-4">Webenza</h3>
+				<p class="text-sm text-portfolio-muted mb-6">Managed 50+ brand clients, delivering high-impact digital campaigns and creative assets.</p>
+				<div class="space-y-2">
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Clients</span>
+						<span class="text-sm font-semibold">50+ Brands</span>
+					</div>
+					<div class="flex justify-between border-b border-portfolio-mid/30 pb-2">
+						<span class="text-xs uppercase tracking-wider text-portfolio-muted">Key Partners</span>
+						<span class="text-sm font-semibold">Amazon, Bosch</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

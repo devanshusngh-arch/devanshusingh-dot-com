@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Resume">
+	<section class="section-padding">
+		<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+			<div>
+				<h1 class="text-6xl md:text-8xl mb-4">Resume</h1>
+				<p class="text-portfolio-muted">Creative Lead · Bangalore, India</p>
+			</div>
+			<a href="#" class="px-6 py-3 border border-portfolio-accent text-portfolio-accent rounded-full text-sm font-medium hover:bg-portfolio-accent hover:text-white transition-all">Download PDF</a>
+		</div>
+
+		<div class="grid md:grid-cols-3 gap-12">
+			<!-- Left Sidebar: Summary & Skills -->
+			<div class="space-y-12">
+				<div>
+					<h2 class="text-2xl mb-4 uppercase tracking-tighter font-semibold">Summary</h2>
+					<p class="text-portfolio-muted font-light leading-relaxed">
+						Visionary Creative Lead with 8+ years of experience in high-growth EdTech and SaaS environments. 
+						Expert at building and scaling creative teams, implementing GenAI workflows, and delivering world-class visual content.
+					</p>
+				</div>
+
+				<div>
+					<h2 class="text-2xl mb-4 uppercase tracking-tighter font-semibold">Core Skills</h2>
+					<div class="flex flex-wrap gap-2">
+						{['Team Leadership', 'GenAI Production', 'Creative Strategy', 'Video Production', 'Art Direction', 'Stakeholder Management', 'Process Optimization', 'Brand Identity'].map(skill => (
+							<span class="px-3 py-1 bg-portfolio-surface border border-portfolio-mid/30 rounded-full text-xs text-portfolio-muted">{skill}</span>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Main Content: Experience -->
+			<div class="md:col-span-2 space-y-12">
+				<h2 class="text-2xl mb-8 uppercase tracking-tighter font-semibold">Experience</h2>
+				
+				<div class="portfolio-card p-8 space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-2xl">Creative Lead</h3>
+							<p class="text-portfolio-accent font-medium">KodeKloud</p>
+						</div>
+						<p class="text-sm text-portfolio-muted">2023 — Present</p>
+					</div>
+					<p class="text-portfolio-muted font-light">Leading the creative engine for a global learning platform. Spearheading the integration of Generative AI into content pipelines, achieving massive efficiency gains while elevating visual standards.</p>
+				</div>
+
+				<div class="portfolio-card p-8 space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-2xl">Senior Creative Associate</h3>
+							<p class="text-portfolio-accent font-medium">Simplilearn</p>
+						</div>
+						<p class="text-sm text-portfolio-muted">2019 — 2023</p>
+					</div>
+					<p class="text-portfolio-muted font-light">Managed a cross-functional team of 8. Responsible for end-to-end creative strategy for high-impact growth campaigns and educational content.</p>
+				</div>
+
+				<div class="portfolio-card p-8 space-y-4">
+					<div class="flex justify-between items-start">
+						<div>
+							<h3 class="text-2xl">Creative Designer</h3>
+							<p class="text-portfolio-accent font-medium">Webenza</p>
+						</div>
+						<p class="text-sm text-portfolio-muted">2017 — 2019</p>
+					</div>
+					<p class="text-portfolio-muted font-light">Executed digital campaigns for premium global brands including Amazon, Bosch, and Schneider Electric.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

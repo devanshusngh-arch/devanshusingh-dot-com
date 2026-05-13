@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+	<section class="section-padding min-h-[70vh] flex flex-col justify-center">
+		<div class="grid md:grid-cols-2 gap-20">
+			<div>
+				<h1 class="text-6xl md:text-8xl mb-8">Let's build <br /> together</h1>
+				<p class="text-xl font-light text-portfolio-muted mb-12 max-w-md">
+					Always open to discussing new projects, creative strategy, or the future of GenAI in production.
+				</p>
+				
+				<div class="space-y-6">
+					<div>
+						<p class="text-xs uppercase tracking-widest text-portfolio-muted mb-1">Email</p>
+						<a href="mailto:devanshusngh@gmail.com" class="text-xl hover:text-portfolio-accent transition-colors">devanshusngh@gmail.com</a>
+					</div>
+					<div>
+						<p class="text-xs uppercase tracking-widest text-portfolio-muted mb-1">LinkedIn</p>
+						<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" class="text-xl hover:text-portfolio-accent transition-colors">linkedin.com/in/devanshu-singh</a>
+					</div>
+					<div>
+						<p class="text-xs uppercase tracking-widest text-portfolio-muted mb-1">Location</p>
+						<p class="text-xl text-white">Bangalore, India</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio-card p-8 md:p-12">
+				<form action="mailto:devanshusngh@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+					<div class="space-y-2">
+						<label for="name" class="text-sm font-medium text-portfolio-muted">Name</label>
+						<input type="text" id="name" name="name" required class="w-full bg-portfolio-bg border border-portfolio-mid/30 rounded-lg px-4 py-3 focus:outline-none focus:border-portfolio-accent transition-colors text-white" placeholder="John Doe" />
+					</div>
+					
+					<div class="space-y-2">
+						<label for="email" class="text-sm font-medium text-portfolio-muted">Email</label>
+						<input type="email" id="email" name="email" required class="w-full bg-portfolio-bg border border-portfolio-mid/30 rounded-lg px-4 py-3 focus:outline-none focus:border-portfolio-accent transition-colors text-white" placeholder="john@example.com" />
+					</div>
+
+					<div class="space-y-2">
+						<label for="message" class="text-sm font-medium text-portfolio-muted">Message</label>
+						<textarea id="message" name="message" rows="4" required class="w-full bg-portfolio-bg border border-portfolio-mid/30 rounded-lg px-4 py-3 focus:outline-none focus:border-portfolio-accent transition-colors text-white resize-none" placeholder="Tell me about your project..."></textarea>
+					</div>
+
+					<button type="submit" class="w-full py-4 bg-portfolio-accent text-white rounded-lg font-semibold hover:brightness-110 transition-all shadow-lg shadow-portfolio-accent/20">
+						Send Message
+					</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</Layout>

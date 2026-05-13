@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --portfolio-bg: #0f1a2e;
+    --portfolio-surface: #18243d;
+    --portfolio-accent: #3b5ce4;
+    --portfolio-white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-portfolio-bg text-portfolio-white font-body antialiased;
+    background-color: var(--portfolio-bg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-normal;
+  }
+}
+
+@layer components {
+  .portfolio-card {
+    @apply bg-portfolio-surface border-portfolio border-portfolio-card rounded-portfolio transition-all duration-300;
+  }
+
+  .portfolio-card:hover {
+    @apply -translate-y-1 shadow-2xl;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-padding {
+    @apply py-10 md:py-20 px-6 md:px-12 max-w-7xl mx-auto;
+  }
+}
