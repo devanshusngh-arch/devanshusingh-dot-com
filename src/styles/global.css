@@ -45,11 +45,11 @@
 
 @layer components {
   .section-container {
-    @apply max-w-luxury mx-auto px-6 py-[60px];
+    
   }
 
   .work-row {
-    @apply flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-luxury-border transition-colors duration-300;
+    @apply flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-white/10 transition-colors duration-300;
   }
 
   .work-row:hover {
