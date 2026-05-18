@@ -1,0 +1,151 @@
+---
+/**
+ * HeroSection — devanshusingh.com
+ * 
+ * Centered hero with decorative vertical lines, staggered fade-in,
+ * tagline pill, name, subtitle, and CTAs.
+ * Drop into: src/components/HeroSection.astro
+ *
+ * Usage:
+ *   ---
+ *   import HeroSection from '../components/HeroSection.astro';
+ *   ---
+ *   <HeroSection />
+ */
+---
+
+<section class="relative mx-auto w-full max-w-5xl">
+
+  <!-- Radial glow (desktop) -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 isolate hidden overflow-hidden lg:block"
+  >
+    <div class="absolute inset-0 -top-14 isolate -z-10 bg-[radial-gradient(35%_80%_at_49%_0%,rgba(255,255,255,0.06),transparent)]"></div>
+  </div>
+
+  <!-- Outer vertical rules (desktop) -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 mx-auto hidden min-h-screen w-full max-w-5xl lg:block"
+  >
+    <div class="absolute inset-y-0 left-0 z-10 h-full w-px bg-gradient-to-b from-white/10 via-white/10 to-transparent"></div>
+    <div class="absolute inset-y-0 right-0 z-10 h-full w-px bg-gradient-to-b from-white/10 via-white/10 to-transparent"></div>
+  </div>
+
+  <!-- Hero content -->
+  <div class="relative flex flex-col items-center justify-center px-4 pt-28 pb-20">
+
+    <!-- Inner decorative rules -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 size-full overflow-hidden">
+      <div class="absolute inset-y-0 left-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-white/[0.06] md:left-8"></div>
+      <div class="absolute inset-y-0 right-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-white/[0.06] md:right-8"></div>
+      <div class="absolute inset-y-0 left-8 w-px bg-gradient-to-b from-transparent via-white/[0.03] to-white/[0.03] md:left-12"></div>
+      <div class="absolute inset-y-0 right-8 w-px bg-gradient-to-b from-transparent via-white/[0.03] to-white/[0.03] md:right-12"></div>
+    </div>
+
+    <!-- Tagline pill -->
+    <a href="#marcus" class="hero-anim delay-0 group flex items-center gap-2.5 rounded-full border border-amber-500/20 bg-amber-500/5 px-4 py-1.5 mb-6 transition-all hover:border-amber-500/40 hover:bg-amber-500/10">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+      </span>
+      <span class="text-[10px] font-medium tracking-widest uppercase text-amber-200/80">
+        NOW LIVE: Meet Marcus — The AI that thinks like a Brand Strategist
+      </span>
+    </a>
+
+    <!-- Headline -->
+    <h1 class="hero-anim delay-1 text-center mb-5">
+      <span class="hero-headline text-white">
+        Creative leadership, built to scale.
+      </span>
+    </h1>
+
+    <!-- Subtitle -->
+    <p class="hero-anim delay-2 mx-auto max-w-lg text-center text-base text-neutral-400 leading-relaxed mb-8">
+      I build brand systems, creative teams, and production pipelines for EdTech, SaaS, and D2C companies.
+    </p>
+
+    <!-- CTAs -->
+    <div class="hero-anim delay-3 flex flex-row flex-wrap items-center justify-center gap-4">
+      <a href="/work" class="hero-btn-ghost group">
+        View Work
+        <svg class="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+      <a href="/resume" class="hero-btn-solid group">
+        View Resume
+        <svg class="size-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ---- Entrance animation ---- */
+  .hero-anim {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: hero-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .delay-0 { animation-delay: 0.1s; }
+  .delay-1 { animation-delay: 0.22s; }
+  .delay-2 { animation-delay: 0.38s; }
+  .delay-3 { animation-delay: 0.52s; }
+
+  @keyframes hero-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ---- Typography ---- */
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---- CTA buttons ---- */
+  .hero-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+  }
+  .hero-btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .hero-btn-solid {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: #fff;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #000;
+    transition: all 0.2s ease;
+  }
+  .hero-btn-solid:hover {
+    background: #e5e5e5;
+  }
+</style>

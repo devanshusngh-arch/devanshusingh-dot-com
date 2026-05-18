@@ -1,0 +1,73 @@
+---
+const projects = [
+  {
+    id: 'marcus',
+    title: 'Marcus — Your AI Brand Strategist',
+    description: 'Stop guessing, start strategizing. Marcus bridges the gap between raw data and creative intuition, grounded in world-class branding frameworks from Keller, Aaker, and Kapferer.',
+    tags: ['React', 'Claude API', 'Brand Strategy'],
+    link: '#',
+    icon: '🧠',
+  },
+  {
+    title: 'AI Resume Generator',
+    description: 'Dynamic HTML resume builder with company-specific tailoring, brand color presets, and PDF export.',
+    tags: ['React', 'Claude API', 'HTML/CSS'],
+    link: '#',
+    icon: '📄',
+  },
+  {
+    title: 'StoryBolt — AI Creative Tool',
+    description: 'AI-powered storytelling and content ideation tool for creative teams and brand managers.',
+    tags: ['React', 'GenAI', 'Content Ops'],
+    link: '#',
+    icon: '⚡',
+  },
+  {
+    title: 'Brand Breakdown Engine',
+    description: 'Automated brand audit tool that analyzes visual identity, messaging, and market positioning.',
+    tags: ['React', 'Claude API', 'Brand Audit'],
+    link: '#',
+    icon: '🔍',
+  },
+];
+---
+
+<section class="px-4 py-12 md:py-16">
+  <div class="mx-auto max-w-6xl">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p class="all-caps-label mb-2">Built with AI</p>
+        <h2 class="font-display italic text-2xl md:text-3xl text-white tracking-tight">
+          Projects & Experiments
+        </h2>
+      </div>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      {projects.map((project) => (
+        <a id={project.id} href={project.link} class="group flex gap-4 p-5 border border-white/[0.06] bg-white/[0.02] rounded-lg transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04] hover:-translate-y-0.5">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-lg">
+            {project.icon}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center justify-between mb-1">
+              <h3 class="text-sm font-medium text-white group-hover:text-neutral-200 transition-colors">
+                {project.title}
+              </h3>
+              <span class="text-neutral-600 group-hover:text-neutral-400 group-hover:translate-x-0.5 transition-all text-sm">→</span>
+            </div>
+            <p class="text-xs text-neutral-500 leading-relaxed mb-3 line-clamp-2">
+              {project.description}
+            </p>
+            <div class="flex flex-wrap gap-1.5">
+              {project.tags.map((tag) => (
+                <span class="px-2 py-0.5 text-[9px] uppercase tracking-wider text-neutral-400 border border-white/[0.08] rounded-full bg-white/[0.02]">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

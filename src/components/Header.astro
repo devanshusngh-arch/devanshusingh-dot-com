@@ -1,0 +1,167 @@
+---
+/**
+ * Header — devanshusingh.com
+ * 
+ * Sticky nav with scroll-aware backdrop blur and mobile menu.
+ * Drop into: src/components/Header.astro
+ *
+ * Usage:
+ *   ---
+ *   import Header from '../components/Header.astro';
+ *   ---
+ *   <Header />
+ */
+
+interface Props {
+  /** Highlight the active nav link */
+  active?: 'work' | 'resume' | 'contact';
+}
+
+const { active } = Astro.props;
+
+const links = [
+  { label: 'Work', href: '/work', key: 'work' },
+  { label: 'Resume', href: '/resume', key: 'resume' },
+  { label: 'Contact', href: '/contact', key: 'contact' },
+] as const;
+---
+
+<header
+  id="site-header"
+  class="sticky top-0 z-50 w-full border-b border-transparent transition-all duration-300"
+>
+  <nav class="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4 md:px-8">
+    <!-- Wordmark -->
+    <a
+      href="/"
+      class="text-base font-semibold tracking-tight text-white transition-opacity hover:opacity-80"
+    >
+      Devanshu Singh
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden items-center gap-1 md:flex">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'rounded-md px-3 py-2 text-sm transition-colors',
+            active === link.key
+              ? 'text-white bg-white/5'
+              : 'text-neutral-400 hover:text-white hover:bg-white/5',
+          ]}
+          aria-current={active === link.key ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button
+      id="mobile-toggle"
+      class="flex size-10 items-center justify-center rounded-md border border-white/10 text-neutral-400 transition-colors hover:bg-white/5 hover:text-white md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Toggle menu"
+    >
+      <svg
+        id="menu-icon"
+        class="size-5"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        viewBox="0 0 24 24"
+      >
+        <line id="m-top" x1="4" y1="7" x2="20" y2="7" class="origin-center transition-all duration-300" />
+        <line id="m-mid" x1="4" y1="12" x2="20" y2="12" class="origin-center transition-all duration-300" />
+        <line id="m-bot" x1="4" y1="17" x2="20" y2="17" class="origin-center transition-all duration-300" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="mobile-menu fixed inset-x-0 top-14 bottom-0 z-40 flex flex-col border-t border-white/10 bg-black/95 p-6 backdrop-blur-lg md:hidden"
+    data-state="closed"
+  >
+    <div class="flex flex-col gap-1">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'rounded-md px-3 py-3 text-base transition-colors',
+            active === link.key
+              ? 'text-white bg-white/5'
+              : 'text-neutral-400 hover:text-white hover:bg-white/5',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<style>
+  /* --- Scroll state --- */
+  .header-scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* --- Mobile menu --- */
+  .mobile-menu {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .mobile-menu[data-state='open'] {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* --- Hamburger → X morph --- */
+  [data-menu-open='true'] #m-top {
+    transform: translateY(5px) rotate(45deg);
+  }
+  [data-menu-open='true'] #m-mid {
+    opacity: 0;
+  }
+  [data-menu-open='true'] #m-bot {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('mobile-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  // Scroll-aware blur
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle('header-scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Mobile menu
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = menu.dataset.state === 'open';
+      const next = isOpen ? 'closed' : 'open';
+      menu.dataset.state = next;
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle.dataset.menuOpen = String(!isOpen);
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+  }
+</script>

@@ -15,7 +15,7 @@ export default {
         }
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Playfair Display"', 'serif'],
         body: ['Inter', 'system-ui', 'sans-serif'],
       },
     },

@@ -2,119 +2,161 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Work">
-	<section class="section-container">
-		<h1 class="font-display italic text-[48px] md:text-[80px] leading-[1.1] tracking-luxury-heading text-[#f0f0f0] mb-20">
+<Layout title="Work" active="work">
+
+	<section class="section">
+		<h1 class="display-heading" style="font-size: clamp(40px, 7vw, 72px); margin: 0 0 80px 0;">
 			Case Studies
 		</h1>
-		
-		<div class="space-y-24">
+
+		<div style="display: flex; flex-direction: column; gap: 80px;">
+
 			<!-- KodeKloud -->
-			<div class="space-y-6">
-				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
-					<h2 class="text-[24px] font-medium text-[#f0f0f0]">KodeKloud</h2>
-					<span class="text-[13px] text-luxury-muted">Dec 2022 – Oct 2025</span>
+			<div>
+				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">KodeKloud</h2>
+					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Dec 2022 – Oct 2025</span>
 				</div>
-				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Associate Creative Director</p>
-				<p class="text-[17px] font-light leading-relaxed text-luxury-muted mb-6">
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Associate Creative Director</p>
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 16px; color: var(--muted); line-height: 1.75; margin: 0 0 20px 0;">
 					Led the creative transformation for one of the leading DevOps learning platforms. Implemented GenAI-native production workflows that increased output by 300% while maintaining premium quality.
 				</p>
-				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+				<ul class="work-bullets" style="margin-bottom: 24px;">
 					<li>Led lean creative team of 3, 200+ brand assets annually</li>
 					<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
 					<li>Drove cross-channel campaigns — CTR improved 18%</li>
 					<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
 					<li>Managed freelancer relationships and vendor briefs</li>
 				</ul>
-				<div class="flex flex-wrap gap-2 mb-8">
+				<div class="work-tags" style="margin-bottom: 32px;">
 					{['Brand Strategy', 'YouTube Growth', 'GenAI Workflow', 'Team Leadership', 'Paid Ads Creative', 'Data-Driven'].map(tag => (
-						<span class="luxury-tag">{tag}</span>
+						<span class="pill">{tag}</span>
 					))}
 				</div>
-				<div class="bg-white/5 border border-white/10 rounded-lg p-6 text-center italic text-luxury-muted text-sm">
-					Detailed case study coming soon
-				</div>
+				<a href="/work/kodekloud" class="view-case-study-btn">
+					View Full Case Study
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M5 12h14M12 5l7 7-7 7"/>
+					</svg>
+				</a>
 			</div>
 
 			<!-- Simplilearn -->
-			<div class="space-y-6">
-				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
-					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Simplilearn</h2>
-					<span class="text-[13px] text-luxury-muted">Jan 2021 – Dec 2022</span>
+			<div>
+				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Simplilearn</h2>
+					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Jan 2021 – Dec 2022</span>
 				</div>
-				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Assistant Manager – Motion Graphic Artist</p>
-				<p class="text-[17px] font-light leading-relaxed text-luxury-muted mb-6">
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Assistant Manager – Motion Graphic Artist</p>
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 16px; color: var(--muted); line-height: 1.75; margin: 0 0 20px 0;">
 					Directed a diverse team of 8 creative professionals across video, design, and motion. Orchestrated large-scale content campaigns that drove massive audience growth in the professional certification space.
 				</p>
-				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+				<ul class="work-bullets" style="margin-bottom: 24px;">
 					<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
 					<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
 					<li>Course promo videos at 35%+ average view rate</li>
 					<li>Reduced turnaround 25% via standardized templates</li>
 				</ul>
-				<div class="flex flex-wrap gap-2 mb-8">
+				<div class="work-tags" style="margin-bottom: 32px;">
 					{['People Management', 'Video Production', 'YouTube Growth', 'Team Leadership', 'A/B Testing', 'Motion Graphics'].map(tag => (
-						<span class="luxury-tag">{tag}</span>
+						<span class="pill">{tag}</span>
 					))}
 				</div>
-				<div class="bg-white/5 border border-white/10 rounded-lg p-6 text-center italic text-luxury-muted text-sm">
-					Detailed case study coming soon
-				</div>
+				<a href="/work/simplilearn" class="view-case-study-btn">
+					View Full Case Study
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M5 12h14M12 5l7 7-7 7"/>
+					</svg>
+				</a>
 			</div>
 
 			<!-- Zolostays -->
-			<div class="space-y-6">
-				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
-					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Zolostays</h2>
-					<span class="text-[13px] text-luxury-muted">Sep 2020 – Jan 2021</span>
+			<div>
+				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Zolostays</h2>
+					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Sep 2020 – Jan 2021</span>
 				</div>
-				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Creative Producer</p>
-				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Creative Producer · Contract</p>
+				<ul class="work-bullets" style="margin-bottom: 24px;">
 					<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
 				</ul>
-				<div class="flex flex-wrap gap-2">
+				<div class="work-tags">
 					{['Campaign Management', 'Creative Direction', 'Video Production'].map(tag => (
-						<span class="luxury-tag">{tag}</span>
+						<span class="pill">{tag}</span>
 					))}
 				</div>
 			</div>
 
 			<!-- Webenza -->
-			<div class="space-y-6">
-				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
-					<h2 class="text-[24px] font-medium text-[#f0f0f0]">Webenza</h2>
-					<span class="text-[13px] text-luxury-muted">Nov 2018 – Sep 2020</span>
+			<div>
+				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Webenza</h2>
+					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Nov 2018 – Sep 2020</span>
 				</div>
-				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Executive – Digital Media & Design</p>
-				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Executive – Digital Media &amp; Design</p>
+				<ul class="work-bullets" style="margin-bottom: 24px;">
 					<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
 					<li>A/B tests on hooks, thumbnails, CTAs</li>
 					<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
 				</ul>
-				<div class="flex flex-wrap gap-2">
+				<div class="work-tags">
 					{['Multi-client Ops', 'A/B Testing', 'Creative Ops', 'Storytelling'].map(tag => (
-						<span class="luxury-tag">{tag}</span>
+						<span class="pill">{tag}</span>
 					))}
 				</div>
 			</div>
 
 			<!-- BYJU'S -->
-			<div class="space-y-6">
-				<div class="flex justify-between items-end border-b border-luxury-border pb-4">
-					<h2 class="text-[24px] font-medium text-[#f0f0f0]">BYJU'S</h2>
-					<span class="text-[13px] text-luxury-muted">Aug 2017 – Oct 2018</span>
+			<div>
+				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
+					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">BYJU'S</h2>
+					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Aug 2017 – Oct 2018</span>
 				</div>
-				<p class="text-[15px] font-light text-luxury-muted uppercase tracking-widest mb-4">Creative Associate</p>
-				<ul class="space-y-3 text-[15px] text-luxury-muted font-light list-disc list-inside mb-8">
+				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Creative Associate</p>
+				<ul class="work-bullets" style="margin-bottom: 24px;">
 					<li>Motion graphics and animation for K-12 STEM curriculum</li>
-					<li>Collaborated with subject matter experts and content R&D</li>
+					<li>Collaborated with subject matter experts and content R&amp;D</li>
 				</ul>
-				<div class="flex flex-wrap gap-2">
+				<div class="work-tags">
 					{['Motion Graphics', 'Video Editing', 'Post-Production', 'Storytelling'].map(tag => (
-						<span class="luxury-tag">{tag}</span>
+						<span class="pill">{tag}</span>
 					))}
 				</div>
 			</div>
+
 		</div>
 	</section>
+
 </Layout>
+
+<style>
+	.view-case-study-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 12px 24px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 8px;
+		color: var(--primary);
+		font-family: 'Inter', system-ui, sans-serif;
+		font-size: 14px;
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.view-case-study-btn:hover {
+		background: rgba(255, 255, 255, 0.08);
+		border-color: rgba(255, 255, 255, 0.2);
+		transform: translateY(-2px);
+	}
+
+	.view-case-study-btn svg {
+		transition: transform 0.2s ease;
+	}
+
+	.view-case-study-btn:hover svg {
+		transform: translateX(4px);
+	}
+</style>

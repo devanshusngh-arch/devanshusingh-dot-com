@@ -1,0 +1,145 @@
+---
+/**
+ * CompanyStrip — devanshusingh.com
+ * 
+ * Infinite-scroll marquee of past employers.
+ * Pure CSS, no JS dependencies.
+ * Updated to use local image logos from public/logo/.
+ */
+
+interface Props {
+  /** Heading above the strip */
+  label?: string;
+}
+
+const { label = 'Previously at' } = Astro.props;
+
+const companies = [
+  { name: 'KodeKloud', logo: '/logo/Kodekloud.png' },
+  { name: 'Simplilearn', logo: '/logo/simplilearn.png' },
+  { name: 'BYJU\'S', logo: '/logo/Byjus.png' },
+  { name: 'Amazon', logo: '/logo/amazon.png' },
+  { name: 'Bosch', logo: '/logo/Borch.png' },
+  { name: 'Schneider Electric', logo: '/logo/Schneider_Electric.png' },
+  { name: 'Ola', logo: '/logo/ola.png' },
+  { name: 'Himalaya', logo: '/logo/Himalaya.png' },
+  { name: 'Webenza', logo: '/logo/webenza.png' },
+  { name: 'Smoor', logo: '/logo/smoor.png' },
+  { name: 'Chai_beer', logo: '/logo/Chai_beer.png' },
+  { name: 'Clarion', logo: '/logo/Clarion.png' },
+  { name: '24/7.ai', logo: '/logo/247ai.png' },
+  { name: 'Archmation', logo: '/logo/Archmation.png' },
+  { name: 'Phoenix Kessaku', logo: '/logo/Phoenix_kessaku.png' },
+  { name: 'Zoomcar', logo: '/logo/zoomcar.png' },
+  { name: 'Ace Micromatic Group', logo: '/logo/ace_micromatic_group.png' },
+  { name: 'Bangalore Airport', logo: '/logo/bangalore_airport.png' },
+];
+---
+
+<section class="relative border-t border-white/[0.08] py-8">
+  {label && (
+    <p class="mb-8 text-center text-sm tracking-wide text-neutral-500">
+      {label}
+    </p>
+  )}
+
+  <div class="marquee-mask relative mx-auto max-w-5xl overflow-hidden">
+    <div class="marquee-track flex w-max items-center gap-[36px] pr-[36px]" aria-label="Companies I've worked with">
+      {/* Two identical sets for seamless loop */}
+      {[...companies, ...companies].map((company) => (
+        <img 
+          src={company.logo} 
+          alt={company.name} 
+          class="company-logo"
+          loading="eager"
+          style={
+            company.logo === '/logo/Kodekloud.png'
+              ? "height: 94px;"
+              : company.logo === '/logo/ola.png'
+                ? "height: 88px;"
+                : company.logo === '/logo/247ai.png'
+                  ? "height: 44px;"
+                  : company.logo === '/logo/Archmation.png'
+                    ? "height: 73px; opacity: 0.6;"
+                    : company.logo === '/logo/Chai_beer.png' 
+                      ? "height: 81px; filter: brightness(1.5);" 
+                      : company.logo === '/logo/Clarion.png'
+                        ? "height: 76px;"
+                        : company.logo === '/logo/Schneider_Electric.png'
+                          ? "height: 80px;"
+                          : company.logo === '/logo/Borch.png'
+                            ? "height: 80px;"
+                            : company.logo === '/logo/Byjus.png'
+                              ? "height: 79px;"
+                              : company.logo === '/logo/Phoenix_kessaku.png'
+                                ? "height: 80px;"
+                                : company.logo === '/logo/simplilearn.png'
+                                  ? "height: 88px;"
+                                  : company.logo === '/logo/ace_micromatic_group.png'
+                                    ? "height: 84px;"
+                                    : company.logo === '/logo/bangalore_airport.png'
+                                      ? "height: 80px;"
+                                      : ""
+          }
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-mask {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    animation: marquee 90s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .company-logo {
+    height: 52px;
+    min-width: 140px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) {
+    .company-logo {
+      height: 73px;
+    }
+  }
+  .company-logo:hover {
+    opacity: 1.0;
+  }
+
+  /* Pause for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation-play-state: paused;
+    }
+  }
+</style>

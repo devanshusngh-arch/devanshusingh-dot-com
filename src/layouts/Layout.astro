@@ -1,51 +1,41 @@
 ---
 import '../styles/global.css';
+import Header from '../components/Header.astro';
 
 interface Props {
 	title: string;
+	active?: 'work' | 'resume' | 'contact';
 }
 
-const { title } = Astro.props;
+const { title, active } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Devanshu Pratap Singh</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+		<title>{title} | Devanshu Singh</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 	</head>
-	<body class="bg-[#0a0a0f] text-[#f0f0f0] selection:bg-luxury-accent selection:text-white">
-		<div class="h-[1px] w-full bg-signature-line fixed top-0 left-0 z-50"></div>
-		
-		<nav class="flex items-center justify-between px-6 py-12 max-w-luxury mx-auto">
-			<a href="/" class="text-[15px] font-semibold text-[#f0f0f0] tracking-tight">Devanshu</a>
-			<div class="flex gap-6 text-[13px] font-normal text-luxury-muted">
-				<a href="/work" class="hover:text-[#f0f0f0] transition-colors duration-300">Work</a>
-				<span class="opacity-20">·</span>
-				<a href="/resume" class="hover:text-[#f0f0f0] transition-colors duration-300">Resume</a>
-				<span class="opacity-20">·</span>
-				<a href="/contact" class="hover:text-[#f0f0f0] transition-colors duration-300">Contact</a>
-			</div>
-		</nav>
-
+	<body>
+		<Header active={active} />
 		<main>
 			<slot />
 		</main>
 
-		<footer class="max-w-luxury mx-auto px-6 py-20 border-t border-luxury-border">
-			<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] text-luxury-muted">
-				<div class="flex flex-wrap gap-x-4 gap-y-2">
-					<a href="mailto:devanshusngh@gmail.com" class="hover:text-[#f0f0f0] transition-colors">devanshusngh@gmail.com</a>
-					<span>·</span>
-					<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" class="hover:text-[#f0f0f0] transition-colors">linkedin.com/in/devanshu-singh-356896a0</a>
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="footer-links">
+					<a href="mailto:devanshusngh@gmail.com" class="footer-link">devanshusngh@gmail.com</a>
+					<span class="footer-dot">·</span>
+					<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" rel="noopener noreferrer" class="footer-link">linkedin.com/in/devanshu-singh-356896a0</a>
 				</div>
-				<p>© 2026 Devanshu Pratap Singh</p>
+				<p class="footer-copy">© 2026 Devanshu Singh</p>
 			</div>
 		</footer>
 	</body>

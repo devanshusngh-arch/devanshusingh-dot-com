@@ -1,0 +1,35 @@
+---
+/*
+  VideoEmbed.astro
+  ================
+  Reusable YouTube embed component for case study pages.
+
+  Usage:
+    <VideoEmbed
+      videoId="YOUR_YOUTUBE_VIDEO_ID"
+      caption="Free Week Campaign — KodeKloud (2023)"
+    />
+
+  To get the videoId: from a URL like https://youtu.be/abc123 → "abc123"
+  or https://youtube.com/watch?v=abc123 → "abc123"
+*/
+interface Props {
+  videoId: string;
+  caption?: string;
+}
+
+const { videoId, caption } = Astro.props;
+---
+
+<div class="cs-video">
+  <div class="cs-video__wrapper">
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`}
+      title={caption || "Video"}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  {caption && <p class="cs-video__caption">{caption}</p>}
+</div>

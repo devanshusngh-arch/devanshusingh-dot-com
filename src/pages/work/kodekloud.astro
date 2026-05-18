@@ -1,0 +1,169 @@
+---
+/*
+  /work/kodekloud.astro
+  =====================
+  Full case study page — KodeKloud
+
+  ✏️  EDIT GUIDE:
+  1. Replace VIDEO_ID_1, VIDEO_ID_2 etc. with your unlisted YouTube IDs
+  2. Update captions to match the actual videos you embed
+  3. Swap placeholder images with screenshots if you have them
+  4. Tweak stat numbers if needed — these match your resume bullets
+  5. Adjust accentColor to KodeKloud brand if desired (current: orange)
+*/
+
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import StatCard from '../../components/StatCard.astro';
+import ImageComparisonSlider from '../../components/ImageComparisonSlider';
+---
+
+<CaseStudyLayout
+  title="Building Creative Infrastructure from Zero"
+  company="KodeKloud"
+  role="Senior Creative / Associate Creative Director"
+  duration="2022 – 2024"
+  heroTagline="Took over the entire marketing video operation from the CEO and CMO. Built the creative team, the pipeline, and the design system that scaled KodeKloud's YouTube channel from 125K to 300K+ subscribers."
+  accentColor="#FF6B35"
+>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1 — THE PROBLEM
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Problem</span>
+    <h2 class="cs-section__heading">No creative team. No design system. No pipeline.</h2>
+    <p>
+      When I joined KodeKloud, the CEO and CMO were personally managing all marketing video output. There was no creative team, no brand system, no production pipeline, and no consistent visual language across any channel. For a company with 125K YouTube subscribers and a growing DevOps education platform, the creative operation was running on sheer willpower.
+    </p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2 — THE APPROACH
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Approach</span>
+    <h2 class="cs-section__heading">Built the operation from the ground up</h2>
+    <p>
+      Took over the entire marketing video effort. Set up the pipeline for YouTube, social media, testimonials, meme videos, explainer videos, instructional design, and conceptual DevOps content. Built a team of three — a motion designer, an editor, and a freelance illustrator — and created the brand guidelines, template system, and QC process that let us ship consistently.
+    </p>
+    <p>
+      Ran campaign videos for Free Week, Black Friday, and KodeKloud AI launches, putting out four to six videos every month. Built high-performance short-form reels for the DevOps community. Worked with subject matter experts to shape the content, managed brand guideline adherence, and used templating strategies along with AI tools like Descript and Claude to move faster.
+    </p>
+    <p>
+      Studied what the DevOps audience actually cared about — career growth, certifications, hands-on labs — and built inbound content around that instead of generic product marketing.
+    </p>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="cs-highlight">
+    <p>
+      "The creative infrastructure became the company's marketing engine. Every campaign, product launch, and community touchpoint ran through the system we built."
+    </p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3 — KEY RESULTS
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Results</span>
+    <h2 class="cs-section__heading">The numbers that came out of it</h2>
+  </section>
+
+  <div class="cs-stats">
+    <StatCard number="300K+" label="YouTube Subscribers (from 125K)" />
+    <StatCard number="18%" label="CTR Improvement" />
+    <StatCard number="3×" label="Content Output Increase" />
+    <StatCard number="4–6" label="Videos Shipped per Month" />
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4 — SELECTED WORK (Videos)
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Selected Work</span>
+    <h2 class="cs-section__heading">Campaign and channel videos</h2>
+    <p>
+      A selection of campaign videos, explainers, and short-form content produced during this period. These represent the range of output — from product launch campaigns to community-driven DevOps content.
+    </p>
+  </section>
+
+  <!--
+    ✏️  REPLACE the videoId values below with your actual unlisted YouTube IDs.
+        Add or remove VideoEmbed blocks as needed (aim for 3–4 per case study).
+  -->
+  <VideoEmbed
+    videoId="VIDEO_ID_1"
+    caption="Free Week Campaign — Launch Video (2023)"
+  />
+
+  <VideoEmbed
+    videoId="VIDEO_ID_2"
+    caption="KodeKloud AI — Product Announcement (2024)"
+  />
+
+  <VideoEmbed
+    videoId="VIDEO_ID_3"
+    caption="100 Days of DevOps — Campaign Series (2023)"
+  />
+
+  <!--
+    ✏️  OPTIONAL: Add a Roadmap.sh Podcast Trailer or Black Friday campaign here
+  <VideoEmbed
+    videoId="VIDEO_ID_4"
+    caption="Roadmap.sh Podcast Trailer (2024)"
+  />
+  -->
+
+
+  <div class="cs-section">
+    <span class="cs-section__label">Before & After</span>
+    <h2 class="cs-section__heading">Creative transformation</h2>
+    <p>How the visual identity and content quality evolved after building the brand system and production pipeline.</p>
+  </div>
+
+  <div class="cs-image" style="border: none;">
+    <ImageComparisonSlider
+      client:visible
+      leftImage="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=675&fit=crop"
+      rightImage="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&h=675&fit=crop"
+      altLeft="Before: KodeKloud channel before brand system"
+      altRight="After: KodeKloud channel with new brand system"
+      labelLeft="Before"
+      labelRight="After"
+    />
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5 — WHAT I ACTUALLY DID
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">My Role</span>
+    <h2 class="cs-section__heading">What "built from zero" actually looked like</h2>
+    <p>
+      This was not a situation where a team existed and I optimized it. There was no team. The scope of what I owned included: hiring and managing the creative team, building brand guidelines from scratch, setting up the entire production pipeline (brief → script → storyboard → production → QC → publish), managing stakeholder relationships with the CEO, CMO, and subject matter experts, and running the GenAI workflow integration that tripled output without adding headcount.
+    </p>
+    <p>
+      The GenAI integration was not a gimmick. Descript handled rough-cut editing and transcription. Claude handled script drafts and thumbnail copy iterations. The templating system meant repeat formats (testimonials, explainers, reels) shipped in half the time. This is what allowed a three-person team to produce at the rate of a much larger operation.
+    </p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6 — IMPACT
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Impact</span>
+    <h2 class="cs-section__heading">Became the creative infrastructure for the entire company</h2>
+    <p>
+      By the time I left, the creative operation was self-sustaining. The pipeline, templates, brand system, and QC process I built continued to run. The YouTube channel had more than doubled in subscribers, the content strategy had shifted from CEO-driven improvisation to a structured, audience-informed production calendar, and the team had a clear playbook for every content format.
+    </p>
+    <p>
+      This is the case study that proves I can build a creative operation from nothing — not just manage an existing one.
+    </p>
+  </section>
+
+</CaseStudyLayout>

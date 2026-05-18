@@ -1,0 +1,168 @@
+---
+/*
+  /work/simplilearn.astro
+  =======================
+  Full case study page — Simplilearn
+
+  ✏️  EDIT GUIDE:
+  1. Replace VIDEO_ID_1, VIDEO_ID_2 etc. with your unlisted YouTube IDs
+  2. Update captions to match the actual videos you embed
+  3. Tweak stat numbers if needed — these match your resume bullets
+  4. Adjust accentColor to Simplilearn brand if desired (current: blue)
+*/
+
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import StatCard from '../../components/StatCard.astro';
+import ImageComparisonSlider from '../../components/ImageComparisonSlider';
+---
+
+<CaseStudyLayout
+  title="Scaling Creative Production for India's Largest EdTech YouTube Channel"
+  company="Simplilearn"
+  role="Player-Coach / Creative Lead"
+  duration="2019 – 2022"
+  heroTagline="Led a team of 8 motion designers and editors. Owned the entire YouTube pipeline shipping 200 videos a quarter. The channel grew from 500K to 2M+ subscribers during this period."
+  accentColor="#2563EB"
+>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1 — THE PROBLEM
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Problem</span>
+    <h2 class="cs-section__heading">A fast-growing channel that needed creative leadership at scale</h2>
+    <p>
+      Simplilearn's YouTube channel was already at 500K subscribers when I joined the team. Growth was happening, but the creative production was bottlenecked. There was no standardized workflow, no template system, and the team was producing content through brute-force effort rather than a scalable process. Every video was a one-off. Every deliverable required senior attention from start to finish.
+    </p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2 — THE APPROACH
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Approach</span>
+    <h2 class="cs-section__heading">Built the machine, then ran it</h2>
+    <p>
+      Managed a team of eight motion designers and editors. Owned the entire YouTube pipeline, shipping two hundred videos a quarter across product marketing videos, testimonials, and paid ad creatives. Ran standups, sat in social media and performance ad meetings, and managed stakeholders across teams.
+    </p>
+    <p>
+      Built template libraries so the team could ship without bottlenecks. Standardized the production workflow from brief intake through QC to publish. Created an A/B testing framework for thumbnails and titles that gave us real data on what drove clicks instead of guessing. Tracked results by geography to understand which markets responded to which formats.
+    </p>
+    <p>
+      Maintained brand guideline adherence across every single deliverable — at 200 videos a quarter, consistency does not happen by accident. It happens because you build systems that enforce it.
+    </p>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="cs-highlight">
+    <p>
+      "At 200 videos a quarter, brand consistency doesn't happen by accident. It happens because you build systems that enforce it."
+    </p>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3 — KEY RESULTS
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Results</span>
+    <h2 class="cs-section__heading">The numbers behind the machine</h2>
+  </section>
+
+  <div class="cs-stats">
+    <StatCard number="2M+" label="YouTube Subscribers (from 500K)" />
+    <StatCard number="200" label="Videos per Quarter" />
+    <StatCard number="35%+" label="View Rate" />
+    <StatCard number="25%" label="Faster Turnaround" />
+    <StatCard number="8" label="Direct Reports Managed" />
+    <StatCard number="18%" label="CTR Improvement (A/B Testing)" />
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4 — SELECTED WORK (Videos)
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Selected Work</span>
+    <h2 class="cs-section__heading">Product marketing, testimonials, and ad creatives</h2>
+    <p>
+      A cross-section of the work produced during this period — from product marketing videos to testimonial content to performance ad creatives. Each video went through the standardized pipeline and met brand guidelines before shipping.
+    </p>
+  </section>
+
+  <!--
+    ✏️  REPLACE the videoId values below with your actual unlisted YouTube IDs.
+        Add or remove VideoEmbed blocks as needed (aim for 3–4 per case study).
+  -->
+  <VideoEmbed
+    videoId="VIDEO_ID_1"
+    caption="Product Marketing — Course Launch Campaign (2021)"
+  />
+
+  <VideoEmbed
+    videoId="VIDEO_ID_2"
+    caption="Student Testimonial — Career Transition Story (2020)"
+  />
+
+  <VideoEmbed
+    videoId="VIDEO_ID_3"
+    caption="Performance Ad Creative — Paid Social (2021)"
+  />
+
+
+  <div class="cs-section">
+    <span class="cs-section__label">Before & After</span>
+    <h2 class="cs-section__heading">Visual standardization</h2>
+    <p>How the video assets transformed after implementing the template system and centralized QC process.</p>
+  </div>
+
+  <div class="cs-image" style="border: none;">
+    <ImageComparisonSlider
+      client:visible
+      leftImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=675&fit=crop"
+      rightImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop"
+      altLeft="Before: Disjointed visual style"
+      altRight="After: Unified brand presence"
+      labelLeft="Before"
+      labelRight="After"
+    />
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5 — WHAT I ACTUALLY DID
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">My Role</span>
+    <h2 class="cs-section__heading">Player-coach, not just manager</h2>
+    <p>
+      This was a player-coach role. I was not just assigning work and reviewing it — I was in the trenches producing alongside the team while also running the operation. Daily standups. Weekly stakeholder syncs with marketing leadership. Monthly performance reviews with geo-segmented analytics. Quarterly planning aligned to product launch calendars.
+    </p>
+    <p>
+      The team reported directly to me. I handled hiring, onboarding, skill development, and workload distribution. When someone was stuck on a complex animation, I would sit with them and work through it. When a campaign deadline moved up, I would pick up deliverables myself rather than burning out the team.
+    </p>
+    <p>
+      The template system was the single biggest force multiplier. Instead of starting every testimonial video from a blank timeline, the team had pre-built structures — intro animation, lower thirds, b-roll placement guides, outro sequence — that cut production time by 25% while keeping quality consistent. That is what allowed eight people to ship at a pace that would normally require twelve.
+    </p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6 — IMPACT
+       ═══════════════════════════════════════════ -->
+  <section class="cs-section">
+    <span class="cs-section__label">Impact</span>
+    <h2 class="cs-section__heading">Built the creative machine behind India's largest EdTech YouTube channel</h2>
+    <p>
+      The channel grew from 500K to over 2 million subscribers during this period. The view rate exceeded 35%. The A/B testing framework I introduced drove an 18% improvement in click-through rate. The turnaround time dropped by 25% after the template system was fully adopted.
+    </p>
+    <p>
+      More importantly, the system survived after I left. The template libraries, the production workflow, the QC checklist, the stakeholder communication cadence — all of it continued to run because it was built as infrastructure, not as something that depended on one person being in the room.
+    </p>
+    <p>
+      This is the case study that proves I can lead a creative team at scale and build production systems that outlast me.
+    </p>
+  </section>
+
+</CaseStudyLayout>

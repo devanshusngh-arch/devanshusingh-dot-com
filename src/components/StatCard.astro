@@ -1,0 +1,21 @@
+---
+/*
+  StatCard.astro
+  ==============
+  Metric card for the stats row in case studies.
+
+  Usage:
+    <StatCard number="300K+" label="YouTube Subscribers" />
+*/
+interface Props {
+  number: string;
+  label: string;
+}
+
+const { number, label } = Astro.props;
+---
+
+<div class="cs-stat">
+  <span class="cs-stat__number">{number}</span>
+  <span class="cs-stat__label">{label}</span>
+</div>
