@@ -5,28 +5,28 @@ const projects = [
     title: 'Marcus — Your AI Brand Strategist',
     description: 'Stop guessing, start strategizing. Marcus bridges the gap between raw data and creative intuition, grounded in world-class branding frameworks from Keller, Aaker, and Kapferer.',
     tags: ['React', 'Claude API', 'Brand Strategy'],
-    link: '#',
+    link: '/brand-board',
     icon: '🧠',
   },
   {
     title: 'AI Resume Generator',
     description: 'Dynamic HTML resume builder with company-specific tailoring, brand color presets, and PDF export.',
     tags: ['React', 'Claude API', 'HTML/CSS'],
-    link: '#',
+    link: 'javascript:void(0)',
     icon: '📄',
   },
   {
     title: 'StoryBolt — AI Creative Tool',
     description: 'AI-powered storytelling and content ideation tool for creative teams and brand managers.',
     tags: ['React', 'GenAI', 'Content Ops'],
-    link: '#',
+    link: 'javascript:void(0)',
     icon: '⚡',
   },
   {
     title: 'Brand Breakdown Engine',
     description: 'Automated brand audit tool that analyzes visual identity, messaging, and market positioning.',
     tags: ['React', 'Claude API', 'Brand Audit'],
-    link: '#',
+    link: 'javascript:void(0)',
     icon: '🔍',
   },
 ];
@@ -50,8 +50,13 @@ const projects = [
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center justify-between mb-1">
-              <h3 class="text-sm font-medium text-white group-hover:text-neutral-200 transition-colors">
+              <h3 class="text-sm font-medium text-white group-hover:text-neutral-200 transition-colors flex items-center gap-2">
                 {project.title}
+                {project.id !== 'marcus' && (
+                  <span class="text-[9px] text-[#3b5ce4] border border-[#3b5ce4]/30 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-semibold bg-[#3b5ce4]/5">
+                    Coming Soon
+                  </span>
+                )}
               </h3>
               <span class="text-neutral-600 group-hover:text-neutral-400 group-hover:translate-x-0.5 transition-all text-sm">→</span>
             </div>
