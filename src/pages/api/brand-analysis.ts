@@ -2,9 +2,10 @@ import type { APIRoute } from "astro";
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
-  const apiKey = import.meta.env.ANTHROPIC_API_KEY;
-  const baseUrl = import.meta.env.ANTHROPIC_BASE_URL || "https://openrouter.ai/api";
+export const POST: APIRoute = async ({ request, locals }) => {
+  const runtime = (locals as any).runtime;
+  const apiKey = runtime?.env?.ANTHROPIC_API_KEY || import.meta.env.ANTHROPIC_API_KEY;
+  const baseUrl = runtime?.env?.ANTHROPIC_BASE_URL || import.meta.env.ANTHROPIC_BASE_URL || "https://openrouter.ai/api";
 
   if (!apiKey) {
     return new Response(
