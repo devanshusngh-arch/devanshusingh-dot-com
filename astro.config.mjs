@@ -4,7 +4,7 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  output: 'static',
+  output: 'server',
   adapter: cloudflare(),
   server: {
     host: true,
