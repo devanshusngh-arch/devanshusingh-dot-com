@@ -2,15 +2,21 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
+const { slug } = Astro.params;
+
+if (!slug) {
+  return new Response(null, { status: 404 });
 }
 
-const { post } = Astro.props;
+const slugStr = Array.isArray(slug) ? slug.join('/') : slug;
+
+const posts = await getCollection('blog');
+const post = posts.find(p => p.slug === slugStr);
+
+if (!post) {
+  return new Response(null, { status: 404 });
+}
+
 const { Content } = await post.render();
 ---
 
