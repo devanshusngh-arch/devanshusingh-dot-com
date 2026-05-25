@@ -2,25 +2,82 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime());
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) =>
+  new Date(b.data.date || b.data.publishDate || '').getTime() -
+  new Date(a.data.date || a.data.publishDate || '').getTime()
+);
 ---
 
-<Layout title="Blog">
-  <section class="max-w-6xl mx-auto px-4 py-16">
-    <h1 class="font-display italic text-4xl md:text-5xl text-white mb-12">Blog</h1>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => (
-        <a href={`/blog/${post.slug}`} class="group block border border-white/[0.06] bg-white/[0.02] transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04]">
-          <img src={post.data.image} alt={post.data.title} class="aspect-[16/10] w-full object-cover" loading="lazy" />
-          <div class="p-4">
-            <span class="text-[10px] uppercase tracking-wider text-neutral-500">#{post.data.category}</span>
-            <h3 class="mt-2 font-medium text-lg text-white">{post.data.title}</h3>
-            <p class="mt-2 text-sm text-neutral-500 line-clamp-2">{post.data.description}</p>
-            <p class="mt-4 text-xs text-neutral-600">{post.data.publishDate}</p>
-          </div>
-        </a>
-      ))}
+<Layout title="All Articles — Devanshu Singh">
+  <main class="min-h-screen bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+
+      <div class="mb-16">
+        <a href="/" class="text-neutral-400 text-sm hover:text-white transition-colors mb-8 inline-block">← Back to Home</a>
+        <p class="text-sm tracking-widest text-neutral-400 uppercase mb-4">Insights</p>
+        <h1 class="text-5xl md:text-6xl font-display italic text-white">All Articles</h1>
+        <p class="text-neutral-400 mt-4 text-lg">Brand strategy, GenAI, and content ops — from a practitioner.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.slug}`}
+            class="glass-card group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-indigo-500/5"
+          >
+            <!-- Image with gradient overlay -->
+            {post.data.image && (
+              <div class="relative aspect-[16/9] overflow-hidden">
+                <img
+                  src={post.data.image}
+                  alt={post.data.title}
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+
+                <!-- Tag badge -->
+                {(post.data.tag || post.data.category) && (
+                  <div class="absolute bottom-3 left-3">
+                    <span class="inline-block rounded-full bg-black/50 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white/80 backdrop-blur-sm">
+                      {post.data.tag || post.data.category}
+                    </span>
+                  </div>
+                )}
+
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-black shadow-lg transition-transform duration-200 group-hover:scale-105">
+                    <svg class="h-4 w-4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                    </svg>
+                    Read Article
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <!-- Content -->
+            <div class="flex flex-1 flex-col gap-3 p-5">
+              <h2 class="text-lg font-semibold leading-tight tracking-tight text-white transition-colors group-hover:text-indigo-300">
+                {post.data.title}
+              </h2>
+              <p class="line-clamp-2 text-sm text-neutral-400">
+                {post.data.excerpt || post.data.description || ''}
+              </p>
+
+              <div class="mt-auto flex items-center justify-between border-t border-white/[0.06] pt-4">
+                <span class="text-xs text-neutral-500">{post.data.date || post.data.publishDate || ''}</span>
+                <span class="inline-flex items-center gap-1 text-xs text-neutral-400 transition-all group-hover:gap-2 group-hover:text-white">
+                  Read more <span class="text-sm">→</span>
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
     </div>
-  </section>
+  </main>
 </Layout>

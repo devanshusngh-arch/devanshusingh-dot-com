@@ -1,63 +1,81 @@
 ---
-/**
- * BlogSection — Latest articles grid for homepage
- * Adapted for Astro from a Next.js/shadcn design
- */
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime())
+const allPosts = await getCollection('blog');
+const posts = allPosts
+  .sort((a, b) => new Date(b.data.date || b.data.publishDate || '').getTime() - new Date(a.data.date || a.data.publishDate || '').getTime())
   .slice(0, 3);
 ---
 
-<section class="px-4 py-16 md:py-20">
-  <div class="mx-auto max-w-6xl">
-    <div class="mb-10 text-center">
-      <p class="mb-3 font-medium text-neutral-500 text-xs uppercase tracking-[0.15em]">
-        Insights
-      </p>
-      <h2 class="font-display italic text-3xl md:text-4xl text-white tracking-tight">
-        Latest Articles
-      </h2>
-    </div>
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => (
-        <a href={`/blog/${post.slug}`} class="group block border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04]">
-          <div class="relative">
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="text-center mb-4">
+    <p class="text-sm tracking-widest text-neutral-400 uppercase">Insights</p>
+  </div>
+  <h2 class="text-4xl md:text-5xl font-display italic text-center mb-16 text-white">Latest Articles</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {posts.map((post) => (
+      <a
+        href={`/blog/${post.slug}`}
+        class="glass-card group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-indigo-500/5"
+      >
+        <!-- Image with gradient overlay -->
+        {post.data.image && (
+          <div class="relative aspect-[16/9] overflow-hidden">
             <img
               src={post.data.image}
               alt={post.data.title}
-              class="aspect-[16/10] w-full object-cover"
-              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <span class="absolute top-0 left-0 bg-[#0a0a0f]/90 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-neutral-300 backdrop-blur-sm">
-              #{post.data.category}
-            </span>
-          </div>
-          <div class="px-4 pb-4 pt-4">
-            <h3 class="mb-2 font-medium text-base md:text-lg text-white tracking-tight leading-snug group-hover:text-neutral-200 transition-colors">
-              {post.data.title}
-            </h3>
-            <p class="mb-5 text-xs md:text-sm text-neutral-500 leading-relaxed line-clamp-2">
-              {post.data.description}
-            </p>
-            <div class="flex items-center justify-between">
-              <span class="flex items-center gap-2 text-xs font-medium text-white group-hover:text-neutral-300 transition-colors">
-                <span class="flex items-center justify-center w-8 h-8 border border-white/10 transition-colors duration-300 group-hover:bg-white group-hover:text-black">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+
+            <!-- Tag badge -->
+            {(post.data.tag || post.data.category) && (
+              <div class="absolute bottom-3 left-3">
+                <span class="inline-block rounded-full bg-black/50 px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-white/80 backdrop-blur-sm">
+                  {post.data.tag || post.data.category}
                 </span>
-                Read more
-              </span>
-              <span class="flex items-center gap-2 text-[10px] text-neutral-600">
-                {post.data.publishDate}
-                <span class="w-8 border-t border-white/10"></span>
+              </div>
+            )}
+
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-black shadow-lg transition-transform duration-200 group-hover:scale-105">
+                <svg class="h-4 w-4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                </svg>
+                Read Article
               </span>
             </div>
           </div>
-        </a>
-      ))}
-    </div>
+        )}
+
+        <!-- Content -->
+        <div class="flex flex-1 flex-col gap-3 p-5">
+          <h3 class="text-lg font-semibold leading-tight tracking-tight text-white transition-colors group-hover:text-indigo-300">
+            {post.data.title}
+          </h3>
+          <p class="line-clamp-2 text-sm text-neutral-400">
+            {post.data.excerpt || post.data.description || ''}
+          </p>
+
+          <div class="mt-auto flex items-center justify-between border-t border-white/[0.06] pt-4">
+            <span class="text-xs text-neutral-500">{post.data.date || post.data.publishDate || ''}</span>
+            <span class="inline-flex items-center gap-1 text-xs text-neutral-400 transition-all group-hover:gap-2 group-hover:text-white">
+              Read more <span class="text-sm">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div class="text-center mt-12">
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-2 border border-neutral-600 text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide"
+    >
+      View All Articles →
+    </a>
   </div>
 </section>

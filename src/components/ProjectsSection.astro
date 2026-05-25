@@ -2,70 +2,87 @@
 const projects = [
   {
     id: 'marcus',
-    title: 'Marcus — Your AI Brand Strategist',
-    description: 'Stop guessing, start strategizing. Marcus bridges the gap between raw data and creative intuition, grounded in world-class branding frameworks from Keller, Aaker, and Kapferer.',
+    title: 'Marcus — AI Brand Strategist',
+    subtitle: 'Featured',
+    description: 'Brand strategy AI that bridges data and creative intuition using Keller, Aaker, and Kapferer frameworks.',
     tags: ['React', 'Claude API', 'Brand Strategy'],
     link: '/brand-board',
-    icon: '🧠',
   },
   {
+    id: 'resume',
     title: 'AI Resume Generator',
+    subtitle: 'Tool',
     description: 'Dynamic HTML resume builder with company-specific tailoring, brand color presets, and PDF export.',
     tags: ['React', 'Claude API', 'HTML/CSS'],
     link: 'javascript:void(0)',
-    icon: '📄',
+    comingSoon: true,
   },
   {
+    id: 'storybolt',
     title: 'StoryBolt — AI Creative Tool',
-    description: 'AI-powered storytelling and content ideation tool for creative teams and brand managers.',
+    subtitle: 'Tool',
+    description: 'AI-powered storytelling and content ideation for creative teams and brand managers.',
     tags: ['React', 'GenAI', 'Content Ops'],
     link: 'javascript:void(0)',
-    icon: '⚡',
+    comingSoon: true,
   },
   {
+    id: 'brand-engine',
     title: 'Brand Breakdown Engine',
+    subtitle: 'Tool',
     description: 'Automated brand audit tool that analyzes visual identity, messaging, and market positioning.',
     tags: ['React', 'Claude API', 'Brand Audit'],
     link: 'javascript:void(0)',
-    icon: '🔍',
+    comingSoon: true,
   },
 ];
 ---
 
-<section class="px-4 py-12 md:py-16">
-  <div class="mx-auto max-w-6xl">
-    <div class="flex items-end justify-between mb-10">
-      <div>
-        <p class="all-caps-label mb-2">Built with AI</p>
-        <h2 class="font-display italic text-2xl md:text-3xl text-white tracking-tight">
-          Projects & Experiments
-        </h2>
-      </div>
-    </div>
-    <div class="grid gap-4 md:grid-cols-2">
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="mb-12">
+    <p class="all-caps-label mb-2">Built with AI</p>
+    <h2 class="font-display italic text-2xl md:text-3xl text-white tracking-tight">
+      Projects & Experiments
+    </h2>
+  </div>
+
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
       {projects.map((project) => (
-        <a id={project.id} href={project.link} class="group flex gap-4 p-5 border border-white/[0.06] bg-white/[0.02] rounded-lg transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04] hover:-translate-y-0.5">
-          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-lg">
-            {project.icon}
-          </div>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between mb-1">
-              <h3 class="text-sm font-medium text-white group-hover:text-neutral-200 transition-colors flex items-center gap-2">
-                {project.title}
-                {project.id !== 'marcus' && (
-                  <span class="text-[9px] text-[#3b5ce4] border border-[#3b5ce4]/30 px-1.5 py-0.5 rounded-full uppercase tracking-wider font-semibold bg-[#3b5ce4]/5">
-                    Coming Soon
-                  </span>
-                )}
-              </h3>
-              <span class="text-neutral-600 group-hover:text-neutral-400 group-hover:translate-x-0.5 transition-all text-sm">→</span>
+        <a
+          href={project.link}
+          class="group relative flex flex-row items-center gap-3 p-3 pr-10 rounded-xl border border-white/[0.06] bg-zinc-900/60 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-white/[0.12]"
+        >
+          <!-- Arrow -->
+          <svg class="absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-neutral-600 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-neutral-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14" />
+            <path d="M12 5l7 7-7 7" />
+          </svg>
+
+          <!-- Content -->
+          <div class="flex flex-1 flex-col gap-1 min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span class="text-[9px] uppercase tracking-[0.15em] text-neutral-500 font-medium">
+                {project.subtitle}
+              </span>
+              {project.comingSoon && (
+                <span class="rounded-full bg-white/[0.04] px-1.5 py-0.5 text-[7px] font-medium uppercase tracking-wider text-neutral-500 border border-white/[0.06]">
+                  Upcoming
+                </span>
+              )}
             </div>
-            <p class="text-xs text-neutral-500 leading-relaxed mb-3 line-clamp-2">
+
+            <h3 class="text-[12px] font-semibold text-white leading-snug tracking-tight group-hover:text-neutral-100 transition-colors">
+              {project.title}
+            </h3>
+
+            <p class="text-[10px] leading-relaxed text-neutral-500 line-clamp-2">
               {project.description}
             </p>
-            <div class="flex flex-wrap gap-1.5">
-              {project.tags.map((tag) => (
-                <span class="px-2 py-0.5 text-[9px] uppercase tracking-wider text-neutral-400 border border-white/[0.08] rounded-full bg-white/[0.02]">
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-1">
+              {project.tags.map((tag, idx) => (
+                <span key={idx} class="rounded-md bg-white/[0.03] px-1.5 py-0.5 text-[8px] text-neutral-500 border border-white/5">
                   {tag}
                 </span>
               ))}
@@ -74,5 +91,4 @@ const projects = [
         </a>
       ))}
     </div>
-  </div>
 </section>
