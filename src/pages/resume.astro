@@ -2,227 +2,221 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Resume" active="resume">
+<Layout title="Resume" active="resume" description="Resume of Devanshu Singh. Senior Creative Manager with 8+ years in brand systems, motion design, YouTube growth, and GenAI workflows.">
 
-	<section class="section">
+  <!-- Hero -->
+  <section class="relative mx-auto w-full max-w-5xl pt-28 pb-8 px-4">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 size-full overflow-hidden">
+      <div class="absolute inset-y-0 left-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:left-8"></div>
+      <div class="absolute inset-y-0 right-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:right-8"></div>
+    </div>
+    <div class="relative flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+      <div>
+        <span class="text-sm tracking-widest text-neutral-500 uppercase mb-4 block">Resume</span>
+        <h1 class="text-5xl md:text-6xl font-display italic text-white mb-2">Devanshu Singh</h1>
+        <p class="text-base text-neutral-400">Creative Strategy &amp; Brand Content Lead</p>
+      </div>
+      <a href="/Devanshu_Pratap_Singh___Creative_Strategy___Brand_Content_Lead.pdf" class="inline-flex items-center gap-2 border border-neutral-600 text-white px-6 py-2.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide flex-shrink-0">
+        Download PDF
+        <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>
+        </svg>
+      </a>
+    </div>
+  </section>
 
-		<!-- Header -->
-		<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 80px; flex-wrap: wrap;">
-			<div>
-				<h1 class="display-heading" style="font-size: clamp(40px, 7vw, 72px); margin: 0 0 8px 0;">Resume</h1>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 15px; color: var(--muted); margin: 0;">Creative Strategy &amp; Brand Content Lead</p>
-			</div>
-			<a href="/Devanshu_Pratap_Singh___Creative_Strategy___Brand_Content_Lead.pdf" style="display: inline-block; padding: 10px 24px; border: 1px solid var(--accent); color: var(--accent); font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 13px; text-decoration: none; border-radius: 100px; transition: background 0.2s ease, color 0.2s ease;" onmouseover="this.style.background='var(--accent)';this.style.color='#fff';" onmouseout="this.style.background='transparent';this.style.color='var(--accent)';">
-				Download PDF
-			</a>
-		</div>
+  <!-- Content -->
+  <section class="py-8 pb-24 px-6 max-w-5xl mx-auto">
+    <div class="flex flex-col gap-12">
 
-		<!-- SUMMARY -->
-		<div class="resume-section">
-			<span class="section-label">Summary</span>
-			<p class="body-text" style="margin: 0;">
-				Creative strategy and design leader with 8+ years building brand systems, visual frameworks, and campaign direction across EdTech, SaaS, and agency environments. Translates brand positioning and business objectives into scalable design systems — from visual identity and brand guidelines to cross-channel campaign execution.
-			</p>
-		</div>
+      <!-- SUMMARY -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Summary</h2>
+        <p class="text-sm text-neutral-400 leading-relaxed max-w-2xl">
+          Creative strategy and design leader with 8+ years building brand systems, visual frameworks, and campaign direction across EdTech, SaaS, and agency environments. Translates brand positioning and business objectives into scalable design systems. From visual identity and brand guidelines to cross-channel campaign execution.
+        </p>
+      </div>
 
-		<!-- EXPERIENCE -->
-		<div class="resume-section">
-			<span class="section-label">Experience</span>
+      <!-- EXPERIENCE -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-6">Experience</h2>
+        <div class="flex flex-col gap-4">
 
-			<!-- KodeKloud -->
-			<div class="resume-entry">
-				<div class="resume-entry-header">
-					<span class="resume-role">Associate Creative Director</span>
-					<span class="resume-date">Dec 2022 – Oct 2025</span>
-				</div>
-				<p class="resume-company">KodeKloud</p>
-				<ul class="resume-bullets">
-					<li>Led lean creative team of 3, 200+ brand assets annually</li>
-					<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
-					<li>Drove cross-channel campaigns — CTR improved 18%</li>
-					<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
-					<li>Managed freelancer relationships and vendor briefs</li>
-				</ul>
-			</div>
+          <!-- KodeKloud -->
+          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5 transition-all duration-300 hover:border-white/20">
+            <div class="flex items-start justify-between gap-4 mb-2 flex-wrap">
+              <div>
+                <h3 class="text-base font-semibold text-white">Associate Creative Director</h3>
+                <p class="text-sm text-neutral-500">KodeKloud</p>
+              </div>
+              <span class="text-xs text-neutral-500 whitespace-nowrap">Dec 2022 – Oct 2025</span>
+            </div>
+            <ul class="list-disc pl-4 text-sm text-neutral-400 leading-relaxed flex flex-col gap-1.5 mt-3">
+              <li>Led lean creative team of 3, 200+ brand assets annually</li>
+              <li>Developed end-to-end brand and visual strategy, scalable design systems</li>
+              <li>Drove cross-channel campaigns. CTR improved 18%</li>
+              <li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript). Production time cut 35%, output 3×</li>
+              <li>Managed freelancer relationships and vendor briefs</li>
+            </ul>
+          </div>
 
-			<!-- Simplilearn -->
-			<div class="resume-entry">
-				<div class="resume-entry-header">
-					<span class="resume-role">Assistant Manager – Motion Graphic Artist</span>
-					<span class="resume-date">Jan 2021 – Dec 2022</span>
-				</div>
-				<p class="resume-company">Simplilearn</p>
-				<ul class="resume-bullets">
-					<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
-					<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
-					<li>Course promo videos at 35%+ average view rate</li>
-					<li>Reduced turnaround 25% via standardized templates</li>
-				</ul>
-			</div>
+          <!-- Simplilearn -->
+          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5 transition-all duration-300 hover:border-white/20">
+            <div class="flex items-start justify-between gap-4 mb-2 flex-wrap">
+              <div>
+                <h3 class="text-base font-semibold text-white">Assistant Manager – Motion Graphic Artist</h3>
+                <p class="text-sm text-neutral-500">Simplilearn</p>
+              </div>
+              <span class="text-xs text-neutral-500 whitespace-nowrap">Jan 2021 – Dec 2022</span>
+            </div>
+            <ul class="list-disc pl-4 text-sm text-neutral-400 leading-relaxed flex flex-col gap-1.5 mt-3">
+              <li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
+              <li>Creative liaison across social, paid media, and production. 10–15% CTR improvement</li>
+              <li>Course promo videos at 35%+ average view rate</li>
+              <li>Reduced turnaround 25% via standardized templates</li>
+            </ul>
+          </div>
 
-			<!-- Zolostays -->
-			<div class="resume-entry">
-				<div class="resume-entry-header">
-					<span class="resume-role">Creative Producer (Contract)</span>
-					<span class="resume-date">Sep 2020 – Jan 2021</span>
-				</div>
-				<p class="resume-company">Zolostays</p>
-				<ul class="resume-bullets">
-					<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
-				</ul>
-			</div>
+          <!-- Zolostays -->
+          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5 transition-all duration-300 hover:border-white/20">
+            <div class="flex items-start justify-between gap-4 mb-2 flex-wrap">
+              <div>
+                <h3 class="text-base font-semibold text-white">Creative Producer (Contract)</h3>
+                <p class="text-sm text-neutral-500">Zolostays</p>
+              </div>
+              <span class="text-xs text-neutral-500 whitespace-nowrap">Sep 2020 – Jan 2021</span>
+            </div>
+            <ul class="list-disc pl-4 text-sm text-neutral-400 leading-relaxed flex flex-col gap-1.5 mt-3">
+              <li>Conceptualized and executed Zolo Got Talent brand campaign. Contestant videos, teasers, logo animation</li>
+            </ul>
+          </div>
 
-			<!-- Webenza -->
-			<div class="resume-entry">
-				<div class="resume-entry-header">
-					<span class="resume-role">Executive – Digital Media &amp; Design</span>
-					<span class="resume-date">Nov 2018 – Sep 2020</span>
-				</div>
-				<p class="resume-company">Webenza</p>
-				<ul class="resume-bullets">
-					<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
-					<li>A/B tests on hooks, thumbnails, CTAs</li>
-					<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
-				</ul>
-			</div>
+          <!-- Webenza -->
+          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5 transition-all duration-300 hover:border-white/20">
+            <div class="flex items-start justify-between gap-4 mb-2 flex-wrap">
+              <div>
+                <h3 class="text-base font-semibold text-white">Executive – Digital Media &amp; Design</h3>
+                <p class="text-sm text-neutral-500">Webenza</p>
+              </div>
+              <span class="text-xs text-neutral-500 whitespace-nowrap">Nov 2018 – Sep 2020</span>
+            </div>
+            <ul class="list-disc pl-4 text-sm text-neutral-400 leading-relaxed flex flex-col gap-1.5 mt-3">
+              <li>Managed creative production across 50+ clients including Amazon, Bosch, Schneider Electric, and Ola Money</li>
+              <li>A/B tests on hooks, thumbnails, CTAs</li>
+              <li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
+            </ul>
+          </div>
 
-			<!-- BYJU'S -->
-			<div class="resume-entry">
-				<div class="resume-entry-header">
-					<span class="resume-role">Creative Associate</span>
-					<span class="resume-date">Aug 2017 – Oct 2018</span>
-				</div>
-				<p class="resume-company">BYJU'S</p>
-				<ul class="resume-bullets">
-					<li>Motion graphics and animation for K-12 STEM curriculum</li>
-					<li>Collaborated with subject matter experts and content R&amp;D</li>
-				</ul>
-			</div>
-		</div>
+          <!-- BYJU'S -->
+          <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5 transition-all duration-300 hover:border-white/20">
+            <div class="flex items-start justify-between gap-4 mb-2 flex-wrap">
+              <div>
+                <h3 class="text-base font-semibold text-white">Creative Associate</h3>
+                <p class="text-sm text-neutral-500">BYJU'S</p>
+              </div>
+              <span class="text-xs text-neutral-500 whitespace-nowrap">Aug 2017 – Oct 2018</span>
+            </div>
+            <ul class="list-disc pl-4 text-sm text-neutral-400 leading-relaxed flex flex-col gap-1.5 mt-3">
+              <li>Motion graphics and animation for K-12 STEM curriculum</li>
+              <li>Collaborated with subject matter experts and content R&amp;D</li>
+            </ul>
+          </div>
 
-		<!-- CORE COMPETENCIES -->
-		<div class="resume-section">
-			<span class="section-label">Core Competencies</span>
-			<div style="display: flex; flex-wrap: wrap; gap: 8px;">
-				{[
-					'Brand Strategy', 'Design Strategy', 'Creative Direction', 'Visual Design Systems', 'Brand Identity',
-					'Brand Communication', 'Campaign Design', 'Motion Graphics', 'Video Production', 'Creative Ops',
-					'Performance Creative & A/B Testing', 'GenAI & AI Workflows', 'Team Leadership', 'People Management',
-					'Stakeholder Management', 'Project Management', 'Social Media Strategy', 'Marketing Communication'
-				].map(skill => (
-					<span class="pill">{skill}</span>
-				))}
-			</div>
-		</div>
+        </div>
+      </div>
 
-		<!-- CERTIFICATIONS -->
-		<div class="resume-section">
-			<span class="section-label">Certifications</span>
-			<div>
-				<div class="cert-row">
-					<div>
-						<a href="https://coursera.org/share/e3da0db7473132149ef8e42fc53e1861" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">Strategic Brand Management</a>
-						<p class="cert-org">SP Jain × Coursera</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row">
-					<div>
-						<a href="https://coursera.org/share/cecaf3aa93b6f3e45a8d27fc063c8c51" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">Agentic AI Creative Workflow</a>
-						<p class="cert-org">Adobe × Coursera</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row">
-					<div>
-						<a href="https://coursera.org/share/649807601f3eb44e86669a165b7dc66a" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">ChatGPT &amp; Zapier: Agentic AI</a>
-						<p class="cert-org">Vanderbilt × Coursera</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row">
-					<div>
-						<a href="https://coursera.org/share/bf05c2f1b0dc04a181da7121c502d497" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">IBM AI Product Manager</a>
-						<p class="cert-org">IBM × Coursera</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row">
-					<div>
-						<a href="https://coursera.org/share/de4a151ddd2bdcdcc8ee08c09fc00a86" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">Google AI Essentials</a>
-						<p class="cert-org">Google × Coursera</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row">
-					<div>
-						<a href="https://ude.my/UC-e138018a-c5d2-407f-b360-4b8b1d434b56" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">SaaS Explainer Video</a>
-						<p class="cert-org">Udemy · Mar 2026</p>
-					</div>
-					<span class="cert-year">2026</span>
-				</div>
-				<div class="cert-row" style="border-bottom: none;">
-					<div>
-						<a href="https://app-na2.hubspot.com/academy/achievements/pypkq96l/en/1/devanshu-singh/inbound-marketing-certified" target="_blank" rel="noopener noreferrer" class="cert-name" style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.12); text-underline-offset: 3px;">Inbound Marketing Certified</a>
-						<p class="cert-org">HubSpot Academy</p>
-					</div>
-					<span class="cert-year">2025</span>
-				</div>
-			</div>
-		</div>
+      <!-- CORE COMPETENCIES -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Core Competencies</h2>
+        <div class="flex flex-wrap gap-2">
+          {[
+            'Brand Strategy', 'Design Strategy', 'Creative Direction', 'Visual Design Systems', 'Brand Identity',
+            'Brand Communication', 'Campaign Design', 'Motion Graphics', 'Video Production', 'Creative Ops',
+            'Performance Creative & A/B Testing', 'GenAI & AI Workflows', 'Team Leadership', 'People Management',
+            'Stakeholder Management', 'Project Management', 'Social Media Strategy', 'Marketing Communication'
+          ].map(skill => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{skill}</span>
+          ))}
+        </div>
+      </div>
 
-		<!-- EDUCATION -->
-		<div class="resume-section">
-			<span class="section-label">Education</span>
-			<div style="padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.08);">
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 16px; color: var(--primary); margin: 0 0 4px 0;">B.Tech · Electrical Engineering</p>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 13px; color: var(--muted); margin: 0 0 4px 0;">JSS Academy of Technical Education · Noida, Delhi NCR</p>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); margin: 0;">2011–2015</p>
-			</div>
-		</div>
+      <!-- CERTIFICATIONS -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Certifications</h2>
+        <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl overflow-hidden">
+          {[
+            { name: 'Strategic Brand Management', org: 'SP Jain × Coursera', year: '2026', url: 'https://coursera.org/share/e3da0db7473132149ef8e42fc53e1861' },
+            { name: 'Agentic AI Creative Workflow', org: 'Adobe × Coursera', year: '2026', url: 'https://coursera.org/share/cecaf3aa93b6f3e45a8d27fc063c8c51' },
+            { name: 'ChatGPT & Zapier: Agentic AI', org: 'Vanderbilt × Coursera', year: '2026', url: 'https://coursera.org/share/649807601f3eb44e86669a165b7dc66a' },
+            { name: 'IBM AI Product Manager', org: 'IBM × Coursera', year: '2026', url: 'https://coursera.org/share/bf05c2f1b0dc04a181da7121c502d497' },
+            { name: 'Google AI Essentials', org: 'Google × Coursera', year: '2026', url: 'https://coursera.org/share/de4a151ddd2bdcdcc8ee08c09fc00a86' },
+            { name: 'SaaS Explainer Video', org: 'Udemy · Mar 2026', year: '2026', url: 'https://ude.my/UC-e138018a-c5d2-407f-b360-4b8b1d434b56' },
+            { name: 'Inbound Marketing Certified', org: 'HubSpot Academy', year: '2025', url: 'https://app-na2.hubspot.com/academy/achievements/pypkq96l/en/1/devanshu-singh/inbound-marketing-certified' },
+          ].map(cert => (
+            <div class="flex items-center justify-between gap-4 px-5 py-3.5 border-b border-white/[0.06] last:border-b-0 hover:bg-white/[0.01] transition-colors">
+              <div>
+                <a href={cert.url} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-white hover:text-indigo-300 transition-colors underline underline-offset-2 decoration-white/10 hover:decoration-indigo-300/30">{cert.name}</a>
+                <p class="text-xs text-neutral-500 mt-0.5">{cert.org}</p>
+              </div>
+              <span class="text-xs text-neutral-600 whitespace-nowrap">{cert.year}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-		<!-- TOOLS -->
-		<div class="resume-section">
-			<span class="section-label">Tools</span>
-			<div class="tools-grid">
-				<div>
-					<p class="tools-category-label">GenAI &amp; AI</p>
-					<p class="tools-list">Claude Code · Google AI Studio · AntiGravity (Google) · Zapier AI Workflows · N8N · ElevenLabs · Midjourney · Adobe Firefly · Descript</p>
-				</div>
-				<div>
-					<p class="tools-category-label">Creative Suite</p>
-					<p class="tools-list">Adobe Creative Cloud · Photoshop &amp; Illustrator · InDesign · After Effects &amp; Premiere Pro · Figma · Canva</p>
-				</div>
-				<div>
-					<p class="tools-category-label">Productivity &amp; Ops</p>
-					<p class="tools-list">Google Workspace · ClickUp · Slack · MCP (Model Context Protocol) · Frame.io</p>
-				</div>
-				<div>
-					<p class="tools-category-label">Analytics</p>
-					<p class="tools-list">Google Analytics 4 · YouTube Studio · HubSpot Analytics</p>
-				</div>
-			</div>
-		</div>
+      <!-- EDUCATION -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Education</h2>
+        <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5">
+          <h3 class="text-base font-semibold text-white">B.Tech · Electrical Engineering</h3>
+          <p class="text-sm text-neutral-400 mt-1">JSS Academy of Technical Education · Noida, Delhi NCR</p>
+          <p class="text-xs text-neutral-500 mt-1">2011–2015</p>
+        </div>
+      </div>
 
-		<!-- STRENGTHS -->
-		<div class="resume-section">
-			<span class="section-label">Strengths</span>
-			<div>
-				<div class="strength-entry">
-					<p class="strength-title">People &amp; Stakeholder Leadership</p>
-					<p class="strength-desc">Led teams of 3–8, managed external vendors, aligned cross-functional stakeholders from brief through delivery.</p>
-				</div>
-				<div class="strength-entry">
-					<p class="strength-title">GenAI-Native Production</p>
-					<p class="strength-desc">Agentic AI workflows that cut cost without cutting quality or brand standards.</p>
-				</div>
-				<div class="strength-entry" style="border-bottom: none;">
-					<p class="strength-title">Data-Informed Creative</p>
-					<p class="strength-desc">A/B testing and analytics driving every creative decision — not gut feel.</p>
-				</div>
-			</div>
-		</div>
+      <!-- TOOLS -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Tools</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { category: 'GenAI & AI', items: 'Claude Code · Google AI Studio · AntiGravity (Google) · Zapier AI Workflows · N8N · ElevenLabs · Midjourney · Adobe Firefly · Descript' },
+            { category: 'Creative Suite', items: 'Adobe Creative Cloud · Photoshop & Illustrator · InDesign · After Effects & Premiere Pro · Figma · Canva' },
+            { category: 'Productivity & Ops', items: 'Google Workspace · ClickUp · Slack · MCP (Model Context Protocol) · Frame.io' },
+            { category: 'Analytics', items: 'Google Analytics 4 · YouTube Studio · HubSpot Analytics' },
+          ].map(cat => (
+            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5">
+              <h3 class="text-xs uppercase tracking-widest text-neutral-500 font-medium mb-2">{cat.category}</h3>
+              <p class="text-sm text-neutral-400 leading-relaxed">{cat.items}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-	</section>
+      <!-- STRENGTHS -->
+      <div>
+        <h2 class="font-display italic text-2xl text-white mb-4">Strengths</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: 'People & Stakeholder Leadership', desc: 'Led teams of 3–8, managed external vendors, aligned cross-functional stakeholders from brief through delivery.' },
+            { title: 'GenAI-Native Production', desc: 'Agentic AI workflows that cut cost without cutting quality or brand standards.' },
+            { title: 'Data-Informed Creative', desc: 'A/B testing and analytics driving every creative decision, not gut feel.' },
+          ].map(s => (
+            <div class="rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-5">
+              <h3 class="text-sm font-semibold text-white mb-2">{s.title}</h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 </Layout>
+
+<style>
+  .font-display {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+</style>

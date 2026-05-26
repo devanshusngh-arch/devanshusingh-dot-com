@@ -2,17 +2,17 @@
 /*
   VideoEmbed.astro
   ================
-  Reusable YouTube embed component for case study pages.
+  Thumbnail card with play overlay — opens a full-screen modal video player.
+  Uses VideoButton React component for smooth animations.
 
   Usage:
     <VideoEmbed
       videoId="YOUR_YOUTUBE_VIDEO_ID"
-      caption="Free Week Campaign — KodeKloud (2023)"
+      caption="Free Week Campaign. KodeKloud (2023)"
     />
-
-  To get the videoId: from a URL like https://youtu.be/abc123 → "abc123"
-  or https://youtube.com/watch?v=abc123 → "abc123"
 */
+import VideoButton from './VideoButton';
+
 interface Props {
   videoId: string;
   caption?: string;
@@ -21,15 +21,4 @@ interface Props {
 const { videoId, caption } = Astro.props;
 ---
 
-<div class="cs-video">
-  <div class="cs-video__wrapper">
-    <iframe
-      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1`}
-      title={caption || "Video"}
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-  {caption && <p class="cs-video__caption">{caption}</p>}
-</div>
+<VideoButton videoId={videoId} caption={caption} client:visible />

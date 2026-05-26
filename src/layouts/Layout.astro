@@ -4,10 +4,14 @@ import Header from '../components/Header.astro';
 
 interface Props {
 	title: string;
-	active?: 'work' | 'resume' | 'contact';
+	description?: string;
+	active?: 'work' | 'resume' | 'marcus' | 'contact';
 }
 
-const { title, active } = Astro.props;
+const { title, description, active } = Astro.props;
+
+const defaultDesc = 'Portfolio of Devanshu Singh. Creative Lead and Brand Strategist building brand systems, creative teams, and production pipelines for EdTech, SaaS, and D2C companies.';
+const metaDesc = description || defaultDesc;
 ---
 
 <!doctype html>
@@ -17,10 +21,39 @@ const { title, active } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Marcus — AI Brand Strategist by Devanshu Singh. AI-powered brand strategy research assistant.">
-		<meta property="og:title" content="Devanshu Singh — Creative Lead">
-		<meta property="og:description" content="Portfolio of Devanshu Singh — Creative Lead, Brand Strategist, GenAI-native production.">
-		<meta property="og:image" content="/og-image.png">
+		<meta name="description" content={metaDesc} />
+		<meta property="og:title" content="Devanshu Singh - Creative Lead" />
+		<meta property="og:description" content={metaDesc} />
+		<meta property="og:image" content="https://devanshusingh.com/og-image.png" />
+		<meta property="og:url" content={"https://devanshusingh.com" + Astro.url.pathname} />
+		<meta property="og:type" content="website" />
+		<link rel="canonical" href={"https://devanshusingh.com" + Astro.url.pathname} />
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Devanshu Singh",
+			"givenName": "Devanshu",
+			"familyName": "Singh",
+			"jobTitle": "Senior Creative Manager",
+			"url": "https://devanshusingh.com",
+			"sameAs": [
+				"https://linkedin.com/in/devanshu-singh-356896a0",
+				"https://github.com/devanshusngh-arch"
+			],
+			"email": "devanshusngh@gmail.com",
+			"knowsAbout": ["Brand Strategy", "Motion Design", "Creative Direction", "GenAI", "YouTube Growth", "Content Strategy"]
+		}
+		</script>
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Devanshu Singh",
+			"url": "https://devanshusingh.com",
+			"description": "Portfolio of Devanshu Singh. Creative Lead and Brand Strategist."
+		}
+		</script>
 		<title>{title} | Devanshu Singh</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,15 +65,148 @@ const { title, active } = Astro.props;
 			<slot />
 		</main>
 
-		<footer class="footer">
-			<div class="footer-inner">
-				<div class="footer-links">
-					<a href="mailto:devanshusngh@gmail.com" class="footer-link">devanshusngh@gmail.com</a>
-					<span class="footer-dot">·</span>
-					<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" rel="noopener noreferrer" class="footer-link">linkedin.com/in/devanshu-singh-356896a0</a>
+		<footer class="cs-footer">
+			<div class="cs-footer-bg">
+				<div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+					<div class="absolute inset-y-0 left-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:left-8"></div>
+					<div class="absolute inset-y-0 right-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:right-8"></div>
 				</div>
-				<p class="footer-copy">© 2026 Devanshu Singh</p>
+				<div class="cs-footer-inner">
+					<div class="cs-footer-col">
+						<h3 class="cs-footer-brand">Devanshu Singh</h3>
+						<p class="cs-footer-tagline">Creative Lead and Brand Strategist. I build brand systems, creative teams, and production pipelines for EdTech, SaaS, and D2C companies.</p>
+					</div>
+					<div class="cs-footer-col">
+						<span class="cs-footer-label">Navigation</span>
+						<div class="cs-footer-nav">
+							<a href="/work" class="cs-footer-link">Work</a>
+							<a href="/resume" class="cs-footer-link">Resume</a>
+							<a href="/contact" class="cs-footer-link">Contact</a>
+						</div>
+					</div>
+					<div class="cs-footer-col">
+						<span class="cs-footer-label">Connect</span>
+						<div class="cs-footer-nav">
+							<a href="mailto:devanshusngh@gmail.com" class="cs-footer-link">devanshusngh@gmail.com</a>
+							<a href="https://linkedin.com/in/devanshu-singh-356896a0" target="_blank" rel="noopener noreferrer" class="cs-footer-link">LinkedIn</a>
+							<a href="https://github.com/devanshusngh-arch" target="_blank" rel="noopener noreferrer" class="cs-footer-link">GitHub</a>
+						</div>
+					</div>
+				</div>
+				<div class="cs-footer-bottom">
+					<span class="cs-footer-copy">&copy; 2026 Devanshu Singh</span>
+					<div class="cs-footer-dots">
+						<span class="cs-dot"></span>
+						<span class="cs-dot"></span>
+						<span class="cs-dot"></span>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</body>
 </html>
+
+<style>
+	/* ── Footer ── */
+	.cs-footer {
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.cs-footer-bg {
+		position: relative;
+		max-width: 64rem;
+		margin: 0 auto;
+		padding: 3rem 1.5rem 1.5rem;
+	}
+
+	.cs-footer-inner {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		gap: 2.5rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.cs-footer-brand {
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		font-size: 1.25rem;
+		font-weight: 400;
+		color: white;
+		margin: 0 0 0.6rem 0;
+	}
+
+	.cs-footer-tagline {
+		font-size: 0.85rem;
+		color: #a0a0b0;
+		line-height: 1.6;
+		margin: 0;
+		max-width: 28rem;
+	}
+
+	.cs-footer-label {
+		display: block;
+		font-size: 0.65rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: #666680;
+		margin-bottom: 0.75rem;
+	}
+
+	.cs-footer-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.cs-footer-link {
+		font-size: 0.85rem;
+		color: #a0a0b0;
+		text-decoration: none;
+		transition: color 0.2s ease;
+		width: fit-content;
+	}
+
+	.cs-footer-link:hover {
+		color: white;
+	}
+
+	.cs-footer-bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	.cs-footer-copy {
+		font-size: 0.75rem;
+		color: #555568;
+		margin: 0;
+	}
+
+	.cs-footer-dots {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
+	.cs-dot {
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.15);
+	}
+
+	@media (max-width: 640px) {
+		.cs-footer-inner {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		.cs-footer-bg {
+			padding: 2rem 1.25rem 1.25rem;
+		}
+	}
+</style>

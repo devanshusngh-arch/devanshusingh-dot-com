@@ -3,18 +3,11 @@
   /work/simplilearn.astro
   =======================
   Full case study page — Simplilearn
-
-  ✏️  EDIT GUIDE:
-  1. Replace VIDEO_ID_1, VIDEO_ID_2 etc. with your unlisted YouTube IDs
-  2. Update captions to match the actual videos you embed
-  3. Tweak stat numbers if needed — these match your resume bullets
-  4. Adjust accentColor to Simplilearn brand if desired (current: blue)
+  All 13 unique videos organized by category.
 */
-
 import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
 import StatCard from '../../components/StatCard.astro';
-import ImageComparisonSlider from '../../components/ImageComparisonSlider';
 ---
 
 <CaseStudyLayout
@@ -26,9 +19,7 @@ import ImageComparisonSlider from '../../components/ImageComparisonSlider';
   accentColor="#2563EB"
 >
 
-  <!-- ═══════════════════════════════════════════
-       SECTION 1 — THE PROBLEM
-       ═══════════════════════════════════════════ -->
+  <!-- SECTION 1 — THE PROBLEM -->
   <section class="cs-section">
     <span class="cs-section__label">The Problem</span>
     <h2 class="cs-section__heading">A fast-growing channel that needed creative leadership at scale</h2>
@@ -37,35 +28,116 @@ import ImageComparisonSlider from '../../components/ImageComparisonSlider';
     </p>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════
-       SECTION 2 — THE APPROACH
-       ═══════════════════════════════════════════ -->
+  <!-- SECTION 2 — THE APPROACH -->
   <section class="cs-section">
     <span class="cs-section__label">The Approach</span>
     <h2 class="cs-section__heading">Built the machine, then ran it</h2>
     <p>
-      Managed a team of eight motion designers and editors. Owned the entire YouTube pipeline, shipping two hundred videos a quarter across product marketing videos, testimonials, and paid ad creatives. Ran standups, sat in social media and performance ad meetings, and managed stakeholders across teams.
+      Managed a team of eight motion designers and editors. Owned the entire YouTube pipeline, shipping 200 videos a quarter across product marketing, testimonials, and paid ad creatives. Ran standups, stakeholder syncs, and cross-team coordination.
     </p>
     <p>
-      Built template libraries so the team could ship without bottlenecks. Standardized the production workflow from brief intake through QC to publish. Created an A/B testing framework for thumbnails and titles that gave us real data on what drove clicks instead of guessing. Tracked results by geography to understand which markets responded to which formats.
+      Built template libraries so the team could ship without bottlenecks. Standardized the workflow from brief intake through QC to publish. Created an A/B testing framework for thumbnails and titles. Tracked results by geography to understand market-specific performance.
     </p>
     <p>
-      Maintained brand guideline adherence across every single deliverable — at 200 videos a quarter, consistency does not happen by accident. It happens because you build systems that enforce it.
+      <strong>Toolkit:</strong> Adobe Creative Cloud (After Effects, Premiere Pro, Photoshop, Illustrator) and Envato Elements for production assets.
     </p>
   </section>
 
-  <!-- Pull Quote -->
+  <!-- BRAND DECODE — Strategic Context -->
+  <section class="cs-section">
+    <span class="cs-section__label">Brand Decode</span>
+    <h2 class="cs-section__heading">The brand I was designing for</h2>
+    <p>
+      Each creative decision was made against a specific brand framework. Here is how Simplilearn's brand was structured.
+    </p>
+  </section>
+
+  <!-- Brand Identity Grid -->
+  <div class="cs-brand-grid">
+    <div class="cs-brand-card" style="--card-accent: #2563EB;">
+      <span class="cs-brand-tag">Archetype</span>
+      <h3 class="cs-brand-title">The Sage</h3>
+      <p class="cs-brand-desc">With Magician undertones. An authoritative yet approachable career coach that transforms knowledge into career outcomes.</p>
+    </div>
+    <div class="cs-brand-card" style="--card-accent: #059669;">
+      <span class="cs-brand-tag">Audience</span>
+      <h3 class="cs-brand-title">Bharat's Aspiring Professionals</h3>
+      <p class="cs-brand-desc">24–35 year olds in Tier 2/3 cities. Seeking salary jumps or career pivots into tech.</p>
+    </div>
+    <div class="cs-brand-card" style="--card-accent: #D97706;">
+      <span class="cs-brand-tag">Positioning</span>
+      <h3 class="cs-brand-title">University Co-Branded Outcomes</h3>
+      <p class="cs-brand-desc">Top university content + job-aligned curricula + flexible financing. Selling salary outcomes, not certificates.</p>
+    </div>
+    <div class="cs-brand-card" style="--card-accent: #7C3AED;">
+      <span class="cs-brand-tag">Tone &amp; Visual</span>
+      <h3 class="cs-brand-title">Authoritative + Motivational</h3>
+      <p class="cs-brand-desc">Data-driven and outcome-obsessed. Blue and white Indian color palette signaling trust.</p>
+    </div>
+  </div>
+
+  <!-- POP / POD Comparison -->
+  <div class="cs-pp">
+    <div class="cs-pp__col cs-pp__pop">
+      <div class="cs-pp__header" style="background: color-mix(in srgb, #3B82F6 8%, transparent); border-bottom: 1px solid var(--color-border, #1e1e2e);">
+        <span class="cs-pp__tag" style="color: #3B82F6;">Points of Parity</span>
+        <h3 class="cs-pp__title">What Simplilearn shares with competitors</h3>
+      </div>
+      <div class="cs-pp__body">
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #3B82F6;"></span>
+          <span>Wide course catalog in tech and data</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #3B82F6;"></span>
+          <span>Certification preparation (PMP, Scrum, AWS)</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #3B82F6;"></span>
+          <span>EMI and flexible payment options</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #3B82F6;"></span>
+          <span>Live online instructor-led training</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-pp__divider">VS</div>
+
+    <div class="cs-pp__col cs-pp__pod">
+      <div class="cs-pp__header" style="background: color-mix(in srgb, #10B981 8%, transparent); border-bottom: 1px solid var(--color-border, #1e1e2e);">
+        <span class="cs-pp__tag" style="color: #10B981;">Points of Difference</span>
+        <h3 class="cs-pp__title">What makes Simplilearn unique</h3>
+      </div>
+      <div class="cs-pp__body">
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #10B981;"></span>
+          <span>Strong university partnerships (Caltech, MIT, Purdue)</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #10B981;"></span>
+          <span>Integrated capstone projects with real-world cases</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #10B981;"></span>
+          <span>Job-assistance guarantee for select programs</span>
+        </div>
+        <div class="cs-pp__item">
+          <span class="cs-pp__bullet" style="background: #10B981;"></span>
+          <span>Mid-premium pricing with university cachet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="cs-highlight">
     <p>
-      "At 200 videos a quarter, brand consistency doesn't happen by accident. It happens because you build systems that enforce it."
+      "For India's ambitious professionals, Simplilearn is the certified training partner that combines top university content, job-aligned curricula, and flexible financing to deliver proven salary outcomes, not just certificates."
     </p>
   </div>
 
-
-  <!-- ═══════════════════════════════════════════
-       SECTION 3 — KEY RESULTS
-       ═══════════════════════════════════════════ -->
+  <!-- SECTION 3 — KEY RESULTS -->
   <section class="cs-section">
     <span class="cs-section__label">Results</span>
     <h2 class="cs-section__heading">The numbers behind the machine</h2>
@@ -74,95 +146,263 @@ import ImageComparisonSlider from '../../components/ImageComparisonSlider';
   <div class="cs-stats">
     <StatCard number="2M+" label="YouTube Subscribers (from 500K)" />
     <StatCard number="200" label="Videos per Quarter" />
-    <StatCard number="35%+" label="View Rate" />
-    <StatCard number="25%" label="Faster Turnaround" />
-    <StatCard number="8" label="Direct Reports Managed" />
-    <StatCard number="18%" label="CTR Improvement (A/B Testing)" />
+    <StatCard number="35%+" label="Average View Rate" />
+    <StatCard number="25%" label="Faster Turnaround via Templates" />
   </div>
 
+  <!-- ALL VIDEOS — By Category -->
 
-  <!-- ═══════════════════════════════════════════
-       SECTION 4 — SELECTED WORK (Videos)
-       ═══════════════════════════════════════════ -->
   <section class="cs-section">
-    <span class="cs-section__label">Selected Work</span>
-    <h2 class="cs-section__heading">Product marketing, testimonials, and ad creatives</h2>
+    <span class="cs-section__label">The Work</span>
+    <h2 class="cs-section__heading">Every video, every format across the Simplilearn YouTube channel</h2>
     <p>
-      A cross-section of the work produced during this period — from product marketing videos to testimonial content to performance ad creatives. Each video went through the standardized pipeline and met brand guidelines before shipping.
+      200 videos every quarter across program promotions, paid ad creatives, B2B brand films, and performance social content. Each crafted in After Effects and Premiere Pro with assets from Envato Elements.
     </p>
   </section>
 
-  <!--
-    ✏️  REPLACE the videoId values below with your actual unlisted YouTube IDs.
-        Add or remove VideoEmbed blocks as needed (aim for 3–4 per case study).
-  -->
-  <VideoEmbed
-    videoId="VIDEO_ID_1"
-    caption="Product Marketing — Course Launch Campaign (2021)"
-  />
-
-  <VideoEmbed
-    videoId="VIDEO_ID_2"
-    caption="Student Testimonial — Career Transition Story (2020)"
-  />
-
-  <VideoEmbed
-    videoId="VIDEO_ID_3"
-    caption="Performance Ad Creative — Paid Social (2021)"
-  />
-
-
+  <!-- Category: Creative Showcase -->
   <div class="cs-section">
-    <span class="cs-section__label">Before & After</span>
-    <h2 class="cs-section__heading">Visual standardization</h2>
-    <p>How the video assets transformed after implementing the template system and centralized QC process.</p>
+    <span class="cs-section__label" style="font-size:0.85rem;color:#2563EB;">Category</span>
+    <h3 class="cs-section__heading" style="font-size:clamp(1.3rem,2.5vw,1.7rem);">Creative: 2D Animation and Milestone Content</h3>
+    <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      Projects that pushed beyond the template library: character animation, milestones, and conceptual pitches.
+    </p>
   </div>
 
-  <div class="cs-image" style="border: none;">
-    <ImageComparisonSlider
-      client:visible
-      leftImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=675&fit=crop"
-      rightImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop"
-      altLeft="Before: Disjointed visual style"
-      altRight="After: Unified brand presence"
-      labelLeft="Before"
-      labelRight="After"
-    />
+  <div class="cs-video-grid">
+    <VideoEmbed videoId="sW6pmsrAdqk" caption="Assignment Promo. 2D vector concept with character rigging and metaphor." />
+    <VideoEmbed videoId="A1PzyCeCQTg" caption="1 Million Celebration. Concept montage with sound design and editing." />
+    <VideoEmbed videoId="YD_WR1gklV4" caption="Data Science. Kinetic typography concept with particle globe." />
   </div>
 
-  <!-- ═══════════════════════════════════════════
-       SECTION 5 — WHAT I ACTUALLY DID
-       ═══════════════════════════════════════════ -->
+  <!-- Category: Demand Gen -->
+  <div class="cs-section">
+    <span class="cs-section__label" style="font-size:0.85rem;color:#2563EB;">Category</span>
+    <h3 class="cs-section__heading" style="font-size:clamp(1.3rem,2.5vw,1.7rem);">Demand Generation: Course Program Promos</h3>
+    <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      High-production program marketing videos blending 3D motion graphics with university partnership branding.
+    </p>
+  </div>
+
+  <div class="cs-video-grid">
+    <VideoEmbed videoId="xE76meNb_N0" caption="PG AI Program. 3D neural network cinematic with Purdue co-branding." />
+    <VideoEmbed videoId="jcEA7dkyjjE" caption="AI Engineer Masters. Tech-noir with light-streak cinematics and brain visuals." />
+    <VideoEmbed videoId="vao5oas6Hks" caption="Cloud Architect Masters. Isometric builds with salary stats ($129K)." />
+    <VideoEmbed videoId="YqVDKeMFEIg" caption="PG Digital Marketing. Vector storytelling with 35-tool logo grid." />
+    <VideoEmbed videoId="rBkzrIhAtKg" caption="PGP Agile. Animated Maturity Model flowchart with timeline animations." />
+  </div>
+
+  <!-- Category: Performance Ads -->
+  <div class="cs-section">
+    <span class="cs-section__label" style="font-size:0.85rem;color:#2563EB;">Category</span>
+    <h3 class="cs-section__heading" style="font-size:clamp(1.3rem,2.5vw,1.7rem);">Performance Ads: Paid Social and Display</h3>
+    <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      Data-driven ad creatives built for conversion. A/B tested on thumbnails, hooks, and pacing.
+    </p>
+  </div>
+
+  <div class="cs-video-grid">
+    <VideoEmbed videoId="1hzFvk0GOIc" caption="Data Science JG. ROI-focused ad with 30+ overlays." />
+    <VideoEmbed videoId="PnupT86rkQ0" caption="FSD Java. Short-form ad with split-screen frames." />
+    <VideoEmbed videoId="bYp7bP4QlO4" caption="Supply Chain Management. Purdue ad with geometric node animations." />
+  </div>
+
+  <!-- Category: B2B & Brand -->
+  <div class="cs-section">
+    <span class="cs-section__label" style="font-size:0.85rem;color:#2563EB;">Category</span>
+    <h3 class="cs-section__heading" style="font-size:clamp(1.3rem,2.5vw,1.7rem);">B2B and Brand: Enterprise Storytelling</h3>
+    <p style="color:var(--color-text-muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      Longer-form content for enterprise decision-makers and partner ecosystems.
+    </p>
+  </div>
+
+  <div class="cs-video-grid">
+    <VideoEmbed videoId="LreDwRKVsbM" caption="B2B Upskilling. Corporate film with infographics and partner logos." />
+    <VideoEmbed videoId="OQArHbQaCV4" caption="App Promotion. Smartphone mockup with floating UI elements." />
+  </div>
+
+  <!-- SECTION 5 — MY ROLE -->
   <section class="cs-section">
     <span class="cs-section__label">My Role</span>
     <h2 class="cs-section__heading">Player-coach, not just manager</h2>
     <p>
-      This was a player-coach role. I was not just assigning work and reviewing it — I was in the trenches producing alongside the team while also running the operation. Daily standups. Weekly stakeholder syncs with marketing leadership. Monthly performance reviews with geo-segmented analytics. Quarterly planning aligned to product launch calendars.
+      Produced alongside the team while running the operation. Daily standups, weekly stakeholder syncs, monthly geo-segmented reviews, quarterly planning aligned to product launches.
     </p>
     <p>
-      The team reported directly to me. I handled hiring, onboarding, skill development, and workload distribution. When someone was stuck on a complex animation, I would sit with them and work through it. When a campaign deadline moved up, I would pick up deliverables myself rather than burning out the team.
+      The team reported directly to me. I handled hiring, onboarding, and workload distribution. When someone was stuck on animation, I sat with them. When deadlines moved, I picked up deliverables myself.
     </p>
     <p>
-      The template system was the single biggest force multiplier. Instead of starting every testimonial video from a blank timeline, the team had pre-built structures — intro animation, lower thirds, b-roll placement guides, outro sequence — that cut production time by 25% while keeping quality consistent. That is what allowed eight people to ship at a pace that would normally require twelve.
+      The template system was the biggest force multiplier. Pre-built structures for intro, lower thirds, b-roll guides, and outros cut production time by 25% while keeping quality consistent.
     </p>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════
-       SECTION 6 — IMPACT
-       ═══════════════════════════════════════════ -->
+  <!-- SECTION 6 — IMPACT -->
   <section class="cs-section">
     <span class="cs-section__label">Impact</span>
     <h2 class="cs-section__heading">Built the creative machine behind India's largest EdTech YouTube channel</h2>
     <p>
-      The channel grew from 500K to over 2 million subscribers during this period. The view rate exceeded 35%. The A/B testing framework I introduced drove an 18% improvement in click-through rate. The turnaround time dropped by 25% after the template system was fully adopted.
+      The channel grew from 500K to over 2 million subscribers. View rate exceeded 35%. A/B testing drove an 18% CTR improvement. Turnaround dropped 25% after the template system was adopted.
     </p>
     <p>
-      More importantly, the system survived after I left. The template libraries, the production workflow, the QC checklist, the stakeholder communication cadence — all of it continued to run because it was built as infrastructure, not as something that depended on one person being in the room.
+      The system survived after I left. Templates, workflow, QC checklist, and stakeholder cadence continued to run. Built as infrastructure, not something dependent on one person.
     </p>
     <p>
-      This is the case study that proves I can lead a creative team at scale and build production systems that outlast me.
+      This case study shows I can lead a creative team at scale and build systems that outlast me.
     </p>
   </section>
 
 </CaseStudyLayout>
+
+<style is:global>
+  /* ── Video Grid for Compact Buttons ── */
+  .cs-video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 4rem;
+  }
+
+  /* ── Brand Decode Grid ── */
+  .cs-brand-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .cs-brand-card {
+    background: var(--color-surface, #111118);
+    border: 1px solid var(--color-border, #1e1e2e);
+    border-radius: 10px;
+    padding: 1.25rem;
+    border-left: 3px solid var(--card-accent, #2563EB);
+    transition: border-color 0.25s ease;
+  }
+
+  .cs-brand-card:hover {
+    border-color: var(--card-accent, #2563EB);
+  }
+
+  .cs-brand-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--card-accent, #2563EB);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .cs-brand-title {
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-text, #f0f0f0);
+    margin: 0 0 0.4rem 0;
+    line-height: 1.2;
+  }
+
+  .cs-brand-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted, #666680);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .cs-brand-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ── POP / POD Comparison ── */
+  .cs-pp {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 4rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--color-border, #1e1e2e);
+  }
+
+  .cs-pp__col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .cs-pp__header {
+    padding: 1rem 1.25rem;
+  }
+
+  .cs-pp__tag {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .cs-pp__title {
+    font-family: var(--font-display, 'Playfair Display', serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text, #f0f0f0);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .cs-pp__body {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .cs-pp__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted, #666680);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .cs-pp__item:last-child {
+    border-bottom: none;
+  }
+
+  .cs-pp__bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cs-pp__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted, #666680);
+    background: var(--color-surface, #111118);
+    padding: 0 1rem;
+    flex-shrink: 0;
+    border-left: 1px solid var(--color-border, #1e1e2e);
+    border-right: 1px solid var(--color-border, #1e1e2e);
+  }
+
+  @media (max-width: 640px) {
+    .cs-pp {
+      flex-direction: column;
+    }
+    .cs-pp__divider {
+      padding: 0.5rem 0;
+      border-left: none;
+      border-right: none;
+      border-top: 1px solid var(--color-border, #1e1e2e);
+      border-bottom: 1px solid var(--color-border, #1e1e2e);
+    }
+  }
+</style>

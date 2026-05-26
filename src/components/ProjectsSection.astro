@@ -2,38 +2,38 @@
 const projects = [
   {
     id: 'marcus',
-    title: 'Marcus — AI Brand Strategist',
+    title: 'Marcus - AI Brand Strategist',
     subtitle: 'Featured',
     description: 'Brand strategy AI that bridges data and creative intuition using Keller, Aaker, and Kapferer frameworks.',
     tags: ['React', 'Claude API', 'Brand Strategy'],
     link: '/brand-board',
   },
   {
-    id: 'resume',
-    title: 'AI Resume Generator',
-    subtitle: 'Tool',
-    description: 'Dynamic HTML resume builder with company-specific tailoring, brand color presets, and PDF export.',
-    tags: ['React', 'Claude API', 'HTML/CSS'],
-    link: 'javascript:void(0)',
-    comingSoon: true,
+    id: 'insightassist',
+    title: 'InsightAssist - LinkedIn Lead Gen',
+    subtitle: 'Client Project',
+    description: '100 verified B2B leads delivered via Firecrawl + n8n + Claude pipeline. ICP-scored decision-makers at consulting firms and enterprises.',
+    tags: ['n8n', 'Firecrawl', 'Claude API', 'Lead Gen'],
+    link: 'https://www.notion.so/InsightAssist-LinkedIn-Lead-Gen-Automation-Sachin-Archmation-Studios-35e9e9efce0d818b9db5d64f5dadb476?source=copy_link',
+    external: true,
   },
   {
-    id: 'storybolt',
-    title: 'StoryBolt — AI Creative Tool',
+    id: 'trend-scoring',
+    title: 'AI Trend Scoring Engine',
     subtitle: 'Tool',
-    description: 'AI-powered storytelling and content ideation for creative teams and brand managers.',
-    tags: ['React', 'GenAI', 'Content Ops'],
-    link: 'javascript:void(0)',
-    comingSoon: true,
+    description: 'Real-time AI trend scoring system that tracks, analyzes, and ranks emerging GenAI trends across media, research, and industry signals.',
+    tags: ['Python', 'GenAI', 'Data Pipeline', 'Trend Analysis'],
+    link: 'https://www.notion.so/AI-Trend-Scoring-Engine-n8n-Reddit-Claude-36c9e9efce0d81b5a735ec2e2f6559dc?source=copy_link',
+    external: true,
   },
   {
-    id: 'brand-engine',
-    title: 'Brand Breakdown Engine',
+    id: 'blog-infra',
+    title: 'AI Automation Blog Infrastructure',
     subtitle: 'Tool',
-    description: 'Automated brand audit tool that analyzes visual identity, messaging, and market positioning.',
-    tags: ['React', 'Claude API', 'Brand Audit'],
-    link: 'javascript:void(0)',
-    comingSoon: true,
+    description: 'End-to-end automated blog pipeline — RSS ingestion, AI drafting, Telegram approval, auto-publish to Astro site on Cloudflare.',
+    tags: ['n8n', 'Claude API', 'Supabase', 'Blog Ops'],
+    link: 'https://www.notion.so/AI-Content-Publishing-Pipeline-Oracle-Cloud-n8n-Ghost-CMS-36c9e9efce0d816e8793d9a676b17d74?source=copy_link',
+    external: true,
   },
 ];
 ---
@@ -50,7 +50,8 @@ const projects = [
       {projects.map((project) => (
         <a
           href={project.link}
-          class="group relative flex flex-row items-center gap-3 p-3 pr-10 rounded-xl border border-white/[0.06] bg-zinc-900/60 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-white/[0.12]"
+          {...(project.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          class="group relative flex flex-row items-center gap-4 p-4 pr-12 rounded-xl border border-white/[0.06] bg-zinc-900/60 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 hover:border-white/[0.12]"
         >
           <!-- Arrow -->
           <svg class="absolute right-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-neutral-600 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-neutral-300" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -59,30 +60,30 @@ const projects = [
           </svg>
 
           <!-- Content -->
-          <div class="flex flex-1 flex-col gap-1 min-w-0">
-            <div class="flex items-center gap-1.5">
-              <span class="text-[9px] uppercase tracking-[0.15em] text-neutral-500 font-medium">
+          <div class="flex flex-1 flex-col gap-2 min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] uppercase tracking-[0.12em] text-neutral-500 font-medium">
                 {project.subtitle}
               </span>
               {project.comingSoon && (
-                <span class="rounded-full bg-white/[0.04] px-1.5 py-0.5 text-[7px] font-medium uppercase tracking-wider text-neutral-500 border border-white/[0.06]">
+                <span class="rounded-full bg-white/[0.04] px-2 py-0.5 text-[8px] font-medium uppercase tracking-wider text-neutral-500 border border-white/[0.06]">
                   Upcoming
                 </span>
               )}
             </div>
 
-            <h3 class="text-[12px] font-semibold text-white leading-snug tracking-tight group-hover:text-neutral-100 transition-colors">
+            <h3 class="text-[14px] font-semibold text-white leading-snug tracking-tight group-hover:text-neutral-100 transition-colors">
               {project.title}
             </h3>
 
-            <p class="text-[10px] leading-relaxed text-neutral-500 line-clamp-2">
+            <p class="text-[12px] leading-relaxed text-neutral-500 line-clamp-2">
               {project.description}
             </p>
 
             <!-- Tags -->
-            <div class="flex flex-wrap gap-1">
+            <div class="flex flex-wrap gap-1.5">
               {project.tags.map((tag, idx) => (
-                <span key={idx} class="rounded-md bg-white/[0.03] px-1.5 py-0.5 text-[8px] text-neutral-500 border border-white/5">
+                <span key={idx} class="rounded-md bg-white/[0.03] px-2 py-0.5 text-[9px] text-neutral-500 border border-white/5">
                   {tag}
                 </span>
               ))}

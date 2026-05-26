@@ -1,0 +1,75 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+---
+
+<CaseStudyLayout
+  title="Delivering a Brand Campaign, Solo"
+  company="Zolostays"
+  role="Creative Producer · Contract"
+  duration="2020 – 2021"
+  heroTagline="Built the Zolo Got Talent campaign from scratch in 6 months as a solo creative contractor. Worked with the core marketing team to produce participant videos, semi-final qualifiers, and guest appearance content."
+  accentColor="#F59E0B"
+>
+
+  <!-- SECTION 1 -- THE PROBLEM -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Problem</span>
+    <h2 class="cs-section__heading">A brand campaign with no creative team</h2>
+    <p>
+      Zolostays needed a full brand campaign for Zolo Got Talent, a pan-India contest engaging residents across their properties. There was no internal creative team, no existing campaign assets, and no template to start from. Just a brief and a deadline.
+    </p>
+  </section>
+
+  <!-- SECTION 2 -- THE APPROACH -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Approach</span>
+    <h2 class="cs-section__heading">Owned the pipeline, end to end</h2>
+    <p>
+      Worked directly with Zolo's core marketing team to build the campaign visual language. Produced participant introduction videos, semi-finalist qualifier reels, and guest appearance content. Each piece followed the same visual system: bold typography, star particle effects, and high-energy pacing.
+    </p>
+    <p>
+      No handoff required. I shot, designed, animated, sound designed, and delivered every asset. The volume of content across contestants, qualifiers, and event promos demanded consistent creative output without a production team behind me.
+    </p>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="cs-highlight">
+    <p>
+      Six months, one person, end to end. From concept to final export, the entire campaign was built by a single creative lead.
+    </p>
+  </div>
+
+  <!-- THE WORK -->
+  <section class="cs-section">
+    <span class="cs-section__label">The Work</span>
+    <h2 class="cs-section__heading">Campaign content</h2>
+    <p>
+      Selected content from the Zolo Got Talent campaign, showing the visual system developed for participant promos, qualifiers, and event teasers.
+    </p>
+  </section>
+
+  <div class="cs-video-grid">
+    <VideoEmbed videoId="r2CSJeCxBQU" caption="ZGT Teaser. Event intro with particle effects and kinetic typography." />
+    <VideoEmbed videoId="98XQhJitd1c" caption="ZGT Promo. Contestant montage with video wall and star animations." />
+  </div>
+
+  <!-- MY ROLE -->
+  <section class="cs-section">
+    <span class="cs-section__label">My Role</span>
+    <h2 class="cs-section__heading">Solo creative producer</h2>
+    <p>
+      Concept, script, storyboard, motion design, sound design, and delivery. All me. Worked alongside the marketing team for strategy and direction. Every decision had to be right the first time with no fallback team.
+    </p>
+  </section>
+
+</CaseStudyLayout>
+
+<style is:global>
+  .cs-video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 4rem;
+  }
+</style>

@@ -39,9 +39,9 @@ const {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} — Devanshu Singh</title>
+  <title>{title} | Devanshu Singh</title>
   <meta name="description" content={heroTagline} />
-  <meta property="og:title" content={`${title} — Devanshu Singh`} />
+  <meta property="og:title" content={`${title} | Devanshu Singh`} />
   <meta property="og:description" content={heroTagline} />
   <meta property="og:image" content={ogImage} />
 
@@ -322,6 +322,65 @@ const {
   .cs-footer-nav__back {
     font-weight: 600;
     font-size: 0.9rem;
+  }
+
+  /* ── Compact Video Button (React component) ── */
+  .cs-vid {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border, #1e1e2e);
+    background: var(--color-surface, #111118);
+    cursor: pointer;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    width: auto;
+    margin: 0.5rem 0;
+  }
+
+  .cs-vid:hover {
+    border-color: var(--accent, #3B82F6);
+    background: color-mix(in srgb, var(--accent, #3B82F6) 4%, var(--color-surface, #111118));
+  }
+
+  .cs-vid__thumb-wrap {
+    position: relative;
+    width: 80px;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease;
+  }
+
+  .cs-vid:hover .cs-vid__thumb-wrap {
+    background: #18181b;
+  }
+
+  .cs-vid__play-icon {
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.25s ease;
+  }
+
+  .cs-vid:hover .cs-vid__play-icon {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+
+  .cs-vid__label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #666680);
+    line-height: 1.4;
   }
 
   /* ── Responsive ────────────────────────────── */

@@ -2,161 +2,149 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Work" active="work">
+<Layout title="Work" active="work" description="Case studies and brand systems built for KodeKloud, Simplilearn, Webenza, Zolostays, and BYJU'S. Creative pipelines, YouTube growth, and production infrastructure.">
 
-	<section class="section">
-		<h1 class="display-heading" style="font-size: clamp(40px, 7vw, 72px); margin: 0 0 80px 0;">
-			Case Studies
-		</h1>
+  <!-- Hero -->
+  <section class="relative mx-auto w-full max-w-5xl pt-28 pb-12 px-4">
+    <!-- Vertical rules -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 size-full overflow-hidden">
+      <div class="absolute inset-y-0 left-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:left-8"></div>
+      <div class="absolute inset-y-0 right-4 w-px bg-gradient-to-b from-transparent via-white/[0.06] to-transparent md:right-8"></div>
+    </div>
+    <div class="relative flex flex-col items-center text-center">
+      <span class="text-sm tracking-widest text-neutral-500 uppercase mb-6">Selected Work</span>
+      <h1 class="text-5xl md:text-6xl font-display italic text-white mb-4">Case Studies</h1>
+      <p class="max-w-lg text-base text-neutral-400 leading-relaxed">
+        Brand systems, creative pipelines, and production infrastructure. Built for each company, from scratch.
+      </p>
+    </div>
+  </section>
 
-		<div style="display: flex; flex-direction: column; gap: 80px;">
+  <!-- Case Study Cards -->
+  <section class="py-4 pb-24 px-6 max-w-5xl mx-auto">
+    <div class="flex flex-col gap-6">
 
-			<!-- KodeKloud -->
-			<div>
-				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">KodeKloud</h2>
-					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Dec 2022 – Oct 2025</span>
-				</div>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Associate Creative Director</p>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 16px; color: var(--muted); line-height: 1.75; margin: 0 0 20px 0;">
-					Led the creative transformation for one of the leading DevOps learning platforms. Implemented GenAI-native production workflows that increased output by 300% while maintaining premium quality.
-				</p>
-				<ul class="work-bullets" style="margin-bottom: 24px;">
-					<li>Led lean creative team of 3, 200+ brand assets annually</li>
-					<li>Developed end-to-end brand and visual strategy, scalable design systems</li>
-					<li>Drove cross-channel campaigns — CTR improved 18%</li>
-					<li>Built GenAI workflow (ElevenLabs, Midjourney, Firefly, Descript) — production time cut 35%, output 3×</li>
-					<li>Managed freelancer relationships and vendor briefs</li>
-				</ul>
-				<div class="work-tags" style="margin-bottom: 32px;">
-					{['Brand Strategy', 'YouTube Growth', 'GenAI Workflow', 'Team Leadership', 'Paid Ads Creative', 'Data-Driven'].map(tag => (
-						<span class="pill">{tag}</span>
-					))}
-				</div>
-				<a href="/work/kodekloud" class="view-case-study-btn">
-					View Full Case Study
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M5 12h14M12 5l7 7-7 7"/>
-					</svg>
-				</a>
-			</div>
+      <!-- KodeKloud -->
+      <a href="/work/kodekloud" class="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-indigo-500/5 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h2 class="text-2xl font-display italic text-white group-hover:text-indigo-300 transition-colors">KodeKloud</h2>
+            <p class="text-sm text-neutral-500 mt-1">Associate Creative Director · Dec 2022 – Oct 2025</p>
+          </div>
+          <svg class="h-5 w-5 flex-shrink-0 text-neutral-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4 max-w-2xl">
+          Took over the entire marketing video operation from the CEO and CMO. Built the creative team, pipeline, and design system that scaled the YouTube channel from 125K to 300K+ subscribers.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['Brand Strategy', 'YouTube Growth', 'GenAI Workflow', 'Team Leadership', 'Paid Ads', 'Data-Driven'].map(tag => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{tag}</span>
+          ))}
+        </div>
+      </a>
 
-			<!-- Simplilearn -->
-			<div>
-				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Simplilearn</h2>
-					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Jan 2021 – Dec 2022</span>
-				</div>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Assistant Manager – Motion Graphic Artist</p>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 16px; color: var(--muted); line-height: 1.75; margin: 0 0 20px 0;">
-					Directed a diverse team of 8 creative professionals across video, design, and motion. Orchestrated large-scale content campaigns that drove massive audience growth in the professional certification space.
-				</p>
-				<ul class="work-bullets" style="margin-bottom: 24px;">
-					<li>Led team of 8 motion designers, 150–200 assets/quarter, 500K → 2M+ subscribers</li>
-					<li>Creative liaison between social, paid media, production — 10–15% CTR improvement</li>
-					<li>Course promo videos at 35%+ average view rate</li>
-					<li>Reduced turnaround 25% via standardized templates</li>
-				</ul>
-				<div class="work-tags" style="margin-bottom: 32px;">
-					{['People Management', 'Video Production', 'YouTube Growth', 'Team Leadership', 'A/B Testing', 'Motion Graphics'].map(tag => (
-						<span class="pill">{tag}</span>
-					))}
-				</div>
-				<a href="/work/simplilearn" class="view-case-study-btn">
-					View Full Case Study
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M5 12h14M12 5l7 7-7 7"/>
-					</svg>
-				</a>
-			</div>
+      <!-- Simplilearn -->
+      <a href="/work/simplilearn" class="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h2 class="text-2xl font-display italic text-white group-hover:text-blue-300 transition-colors">Simplilearn</h2>
+            <p class="text-sm text-neutral-500 mt-1">Assistant Manager – Motion Graphics · Jan 2021 – Dec 2022</p>
+          </div>
+          <svg class="h-5 w-5 flex-shrink-0 text-neutral-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4 max-w-2xl">
+          Led a team of 8 motion designers and editors. Owned the entire YouTube pipeline shipping 200 videos per quarter. Grew the channel from 500K to 2M+ subscribers.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['People Management', 'Video Production', 'YouTube Growth', 'Team Leadership', 'A/B Testing', 'Motion Graphics'].map(tag => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{tag}</span>
+          ))}
+        </div>
+      </a>
 
-			<!-- Zolostays -->
-			<div>
-				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Zolostays</h2>
-					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Sep 2020 – Jan 2021</span>
-				</div>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Creative Producer · Contract</p>
-				<ul class="work-bullets" style="margin-bottom: 24px;">
-					<li>Conceptualized and executed Zolo Got Talent brand campaign — contestant videos, teasers, logo animation</li>
-				</ul>
-				<div class="work-tags">
-					{['Campaign Management', 'Creative Direction', 'Video Production'].map(tag => (
-						<span class="pill">{tag}</span>
-					))}
-				</div>
-			</div>
+      <!-- Webenza -->
+      <a href="/work/webenza" class="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-emerald-500/5 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h2 class="text-2xl font-display italic text-white group-hover:text-emerald-300 transition-colors">Webenza</h2>
+            <p class="text-sm text-neutral-500 mt-1">Executive – Digital Media & Design · Nov 2018 – Sep 2020</p>
+          </div>
+          <svg class="h-5 w-5 flex-shrink-0 text-neutral-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4 max-w-2xl">
+          Sole video producer for 50+ enterprise clients including Amazon, Bosch, Schneider Electric, Ola Money. Built the template system and QC process that made agency-scale production possible.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['Multi-client Ops', 'Creative Ops', 'Motion Graphics', 'Storytelling', 'Template Systems'].map(tag => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{tag}</span>
+          ))}
+        </div>
+      </a>
 
-			<!-- Webenza -->
-			<div>
-				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">Webenza</h2>
-					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Nov 2018 – Sep 2020</span>
-				</div>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Executive – Digital Media &amp; Design</p>
-				<ul class="work-bullets" style="margin-bottom: 24px;">
-					<li>Managed creative production across 50+ clients — Amazon, Bosch, Schneider Electric, Ola Money</li>
-					<li>A/B tests on hooks, thumbnails, CTAs</li>
-					<li>Built QC workflows adopted agency-wide, reducing review cycles 20%</li>
-				</ul>
-				<div class="work-tags">
-					{['Multi-client Ops', 'A/B Testing', 'Creative Ops', 'Storytelling'].map(tag => (
-						<span class="pill">{tag}</span>
-					))}
-				</div>
-			</div>
+      <!-- Zolostays -->
+      <a href="/work/zolo" class="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-amber-500/5 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h2 class="text-2xl font-display italic text-white group-hover:text-amber-300 transition-colors">Zolostays</h2>
+            <p class="text-sm text-neutral-500 mt-1">Creative Producer · Contract · Sep 2020 – Jan 2021</p>
+          </div>
+          <svg class="h-5 w-5 flex-shrink-0 text-neutral-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4 max-w-2xl">
+          Six-month solo contract. Created every asset for the Zolo Got Talent brand campaign. Contestant videos, teasers, logo animations. From brief to publish, completely independent.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['Campaign Management', 'Creative Direction', 'Video Production', 'Solo Production'].map(tag => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{tag}</span>
+          ))}
+        </div>
+      </a>
 
-			<!-- BYJU'S -->
-			<div>
-				<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap;">
-					<h2 style="font-family: 'Inter', system-ui, sans-serif; font-weight: 500; font-size: 22px; color: var(--primary); margin: 0;">BYJU'S</h2>
-					<span style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted);">Aug 2017 – Oct 2018</span>
-				</div>
-				<p style="font-family: 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 20px 0;">Creative Associate</p>
-				<ul class="work-bullets" style="margin-bottom: 24px;">
-					<li>Motion graphics and animation for K-12 STEM curriculum</li>
-					<li>Collaborated with subject matter experts and content R&amp;D</li>
-				</ul>
-				<div class="work-tags">
-					{['Motion Graphics', 'Video Editing', 'Post-Production', 'Storytelling'].map(tag => (
-						<span class="pill">{tag}</span>
-					))}
-				</div>
-			</div>
+      <!-- BYJU'S -->
+      <a href="/work/byjus" class="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-6 transition-all duration-500 hover:border-white/20 hover:shadow-xl hover:shadow-violet-500/5 hover:-translate-y-0.5">
+        <div class="flex items-start justify-between gap-4 mb-3">
+          <div>
+            <h2 class="text-2xl font-display italic text-white group-hover:text-violet-300 transition-colors">BYJU'S</h2>
+            <p class="text-sm text-neutral-500 mt-1">Creative Associate · Aug 2017 – Oct 2018</p>
+          </div>
+          <svg class="h-5 w-5 flex-shrink-0 text-neutral-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </div>
+        <p class="text-sm text-neutral-400 leading-relaxed mb-4 max-w-2xl">
+          First creative role out of college. Made motion graphics for K-12 STEM curriculum. Learned shape layer animation, green screen production, and how to collaborate with subject matter experts.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {['Motion Graphics', 'Video Editing', 'Post-Production', 'Storytelling', 'K-12 Education'].map(tag => (
+            <span class="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-[10px] text-neutral-500 uppercase tracking-wider">{tag}</span>
+          ))}
+        </div>
+      </a>
 
-		</div>
-	</section>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-6 max-w-5xl mx-auto text-center border-t border-white/[0.06]">
+    <p class="text-neutral-400 text-sm mb-4">Want to see the full picture?</p>
+    <a href="/resume" class="inline-flex items-center gap-2 border border-neutral-600 text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 text-sm tracking-wide">
+      View Resume →
+    </a>
+  </section>
 
 </Layout>
 
 <style>
-	.view-case-study-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		padding: 12px 24px;
-		background: rgba(255, 255, 255, 0.05);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 8px;
-		color: var(--primary);
-		font-family: 'Inter', system-ui, sans-serif;
-		font-size: 14px;
-		font-weight: 500;
-		text-decoration: none;
-		transition: all 0.2s ease;
-	}
-
-	.view-case-study-btn:hover {
-		background: rgba(255, 255, 255, 0.08);
-		border-color: rgba(255, 255, 255, 0.2);
-		transform: translateY(-2px);
-	}
-
-	.view-case-study-btn svg {
-		transition: transform 0.2s ease;
-	}
-
-	.view-case-study-btn:hover svg {
-		transform: translateX(4px);
-	}
+  .font-display {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
 </style>
