@@ -178,7 +178,7 @@ export function BeamsBackground({
             <canvas
                 ref={canvasRef}
                 className="absolute inset-0"
-                style={{ filter: "blur(15px)", pointerEvents: "none" }}
+                style={{ filter: "blur(15px)" }}
             />
 
             <motion.div
@@ -192,7 +192,6 @@ export function BeamsBackground({
                     repeat: Number.POSITIVE_INFINITY,
                 }}
                 style={{
-                    pointerEvents: "none",
                     backdropFilter: "blur(50px)",
                 }}
             />
