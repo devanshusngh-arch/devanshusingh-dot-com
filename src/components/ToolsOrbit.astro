@@ -4,6 +4,7 @@
  * 
  * Re-implemented as a pure Astro component with Vanilla JS 
  * and "Remotion-style" orbital animations for smooth, slow rotation.
+ * Uses real SVG logos in their original colors.
  */
 
 const categories = [
@@ -12,12 +13,13 @@ const categories = [
     label: 'GenAI & Automation',
     description: 'AI-native tools that cut production time by 35% without compromising quality.',
     tools: [
-      { name: 'Claude Code', icon: '⚡' },
-      { name: 'Claude API', icon: '🤖' },
-      { name: 'n8n', icon: '⚙️' },
-      { name: 'Adobe Firefly', icon: '🔥' },
-      { name: 'ElevenLabs', icon: '🗣️' },
-      { name: 'Descript', icon: '🎙️' },
+      { name: 'Claude', svg: '/svgs/genai/claude.svg' },
+      { name: 'DeepSeek', svg: '/svgs/genai/deepseek.svg' },
+      { name: 'Gemini CLI', svg: '/svgs/genai/gemini.svg' },
+      { name: 'n8n', svg: '/svgs/genai/n8n.svg' },
+      { name: 'ElevenLabs', svg: '/svgs/genai/elevenlabs.svg' },
+      { name: 'Zapier', svg: '/svgs/genai/zapier.svg' },
+      { name: 'Obsidian', svg: '/svgs/genai/obsidian.svg' },
     ],
   },
   {
@@ -25,12 +27,13 @@ const categories = [
     label: 'Creative Production',
     description: 'The core suite for video, motion, and visual design at scale.',
     tools: [
-      { name: 'After Effects', icon: '🎬' },
-      { name: 'Premiere Pro', icon: '🎞️' },
-      { name: 'Photoshop', icon: '📸' },
-      { name: 'Illustrator', icon: '✏️' },
-      { name: 'InDesign', icon: '📐' },
-      { name: 'Canva', icon: '🖼️' },
+      { name: 'After Effects', svg: '/svgs/creative/after-effects.svg' },
+      { name: 'Premiere Pro', svg: '/svgs/creative/premiere.svg' },
+      { name: 'Photoshop', svg: '/svgs/creative/photoshop.svg' },
+      { name: 'Illustrator', svg: '/svgs/creative/illustrator.svg' },
+      { name: 'Descript', svg: '/svgs/creative/descript.svg' },
+      { name: 'Canva', svg: '/svgs/creative/canva.svg' },
+      { name: 'Envato', svg: '/svgs/creative/envato.svg' },
     ],
   },
   {
@@ -38,12 +41,13 @@ const categories = [
     label: 'Design & Systems',
     description: 'Where brand systems, UI, and design tokens come to life.',
     tools: [
-      { name: 'Figma', icon: '🎨' },
-      { name: 'Frame.io', icon: '🖥️' },
-      { name: 'Google Fonts', icon: '🔤' },
-      { name: 'Coolors', icon: '🎯' },
-      { name: 'Notion', icon: '📝' },
-      { name: 'Whimsical', icon: '💭' },
+      { name: 'Figma', svg: '/svgs/design/figma.svg' },
+      { name: 'Firefly', svg: '/svgs/design/firefly.svg' },
+      { name: 'AI Studio', svg: '/svgs/design/ai-studio.svg' },
+      { name: 'Midjourney', svg: '/svgs/design/midjourney.svg' },
+      { name: 'Notion', svg: '/svgs/design/notion.svg' },
+      { name: 'Excalidraw', svg: '/svgs/design/excalidraw.svg' },
+      { name: 'Express', svg: '/svgs/design/express.svg' },
     ],
   },
   {
@@ -51,12 +55,13 @@ const categories = [
     label: 'Analytics & Ops',
     description: 'Data-informed creative decisions, not gut feel.',
     tools: [
-      { name: 'GA4', icon: '📊' },
-      { name: 'YouTube Studio', icon: '📺' },
-      { name: 'HubSpot', icon: '🧲' },
-      { name: 'ClickUp', icon: '✅' },
-      { name: 'Slack', icon: '💬' },
-      { name: 'Zapier AI', icon: '🔗' },
+      { name: 'YouTube', svg: '/svgs/analytics/youtube.svg' },
+      { name: 'GA4', svg: '/svgs/analytics/ga4.svg' },
+      { name: 'HubSpot', svg: '/svgs/analytics/hubspot.svg' },
+      { name: 'ClickUp', svg: '/svgs/analytics/clickup.svg' },
+      { name: 'Slack', svg: '/svgs/analytics/slack.svg' },
+      { name: 'Frame.io', svg: '/svgs/analytics/frameio.svg' },
+      { name: 'VS Code', svg: '/svgs/analytics/vscode.svg' },
     ],
   },
 ];
@@ -133,6 +138,13 @@ const categories = [
     font-weight: 500 !important;
   }
 
+  .tool-node .tool-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+  }
+
   @media (max-width: 768px) {
     .orbital-container {
       transform: scale(0.8);
@@ -150,6 +162,8 @@ const categories = [
   let rotation = 0;
   let running = true;
   let currentCategoryId = 'genai';
+  const INNER_RADIUS = 82;
+  const OUTER_RADIUS = 165;
 
   function renderTools(categoryId) {
     currentCategoryId = categoryId;
@@ -158,20 +172,29 @@ const categories = [
 
     toolsDisplay.innerHTML = '';
 
+    const total = active.tools.length;
+    const innerCount = Math.min(3, Math.floor(total / 2) + (total % 2));
+    const outerCount = total - innerCount;
+
     // Create tool elements
-    active.tools.slice(0, 6).forEach((tool, i) => {
+    active.tools.forEach((tool, i) => {
+      const isInner = i < innerCount;
       const el = document.createElement('div');
       el.className = `tool-node tool-${i} absolute flex flex-col items-center gap-1.5 transition-opacity duration-500 ease-out`;
       el.style.opacity = '0';
-      el.style.animation = `toolFadeIn 0.4s ease-out ${i * 80}ms forwards`;
+      el.style.animation = `toolFadeIn 0.4s ease-out ${i * 60}ms forwards`;
       el.style.willChange = 'transform, left, top';
-      
-      const size = i < 3 ? 'w-11 h-11' : 'w-10 h-10';
-      const ringClass = i < 3 ? 'bg-white/[0.04] border-white/[0.1] text-lg' : 'bg-white/[0.03] border-white/[0.08] text-base';
-      const textClass = i < 3 ? 'text-neutral-500' : 'text-neutral-400';
+
+      const size = isInner ? 'w-11 h-11' : 'w-10 h-10';
+      const ringClass = isInner
+        ? 'bg-white/[0.04] border-white/[0.1]'
+        : 'bg-white/[0.03] border-white/[0.08]';
+      const textClass = isInner ? 'text-neutral-500' : 'text-neutral-400';
 
       el.innerHTML = `
-        <div class="${size} rounded-full border ${ringClass} flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-110 transition-all duration-300 cursor-default">${tool.icon}</div>
+        <div class="${size} rounded-full border ${ringClass} flex items-center justify-center hover:bg-white/[0.08] hover:border-white/[0.2] hover:scale-110 transition-all duration-300 cursor-default overflow-hidden">
+          <img src="${tool.svg}" alt="${tool.name}" class="tool-svg" loading="lazy" />
+        </div>
         <span class="text-[10px] ${textClass} whitespace-nowrap font-inter">${tool.name}</span>
       `;
       toolsDisplay.appendChild(el);
@@ -180,21 +203,28 @@ const categories = [
 
   function tick() {
     if (running) {
-      rotation += 0.0012; // Slowed down for high-end feel (0.003 -> 0.0012)
-      
+      rotation += 0.0012;
+
       const toolNodes = toolsDisplay.querySelectorAll('.tool-node');
+      const total = toolNodes.length;
+      const innerCount = Math.min(3, Math.floor(total / 2) + (total % 2));
+      const innerAngleStep = 360 / innerCount;
+      const outerAngleStep = 360 / (total - innerCount);
+
       toolNodes.forEach((node, i) => {
-        const isInner = i < 3;
-        const radius = isInner ? 82 : 165;
-        
-        // Base angles to space them out
-        const baseAngle = isInner ? ((360 / 3) * i - 90) : ((360 / 3) * (i - 3) - 30);
-        
-        // Apply "Remotion-style" orbital math
+        const isInner = i < innerCount;
+        const radius = isInner ? INNER_RADIUS : OUTER_RADIUS;
+
+        const idxInOrbit = isInner ? i : i - innerCount;
+        const step = isInner ? innerAngleStep : outerAngleStep;
+        const baseAngle = isInner
+          ? step * idxInOrbit - 90
+          : step * idxInOrbit - 30;
+
         const angleRad = (baseAngle * Math.PI / 180) + (isInner ? rotation : -rotation * 0.6);
         const x = 190 + radius * Math.cos(angleRad);
         const y = 190 + radius * Math.sin(angleRad);
-        
+
         node.style.left = `${x}px`;
         node.style.top = `${y}px`;
         node.style.transform = 'translate(-50%,-50%)';
@@ -206,25 +236,22 @@ const categories = [
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const id = tab.getAttribute('data-category');
-      
-      // Update UI
+
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
       const cat = categories.find(c => c.id === id);
       if (description && cat) description.textContent = cat.description;
-      
+
       renderTools(id);
     });
   });
 
-  // Handle hover to pause
   if (orbitalContainer) {
     orbitalContainer.addEventListener('mouseenter', () => { running = false; });
     orbitalContainer.addEventListener('mouseleave', () => { running = true; });
   }
 
-  // Initial render & start loop
   renderTools('genai');
   tick();
 </script>
