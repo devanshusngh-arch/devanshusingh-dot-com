@@ -11,4 +11,9 @@ export default defineConfig({
     port: 3000
   },
   integrations: [tailwind(), react()],
+  vite: {
+    ssr: {
+      noExternal: ['motion'],
+    },
+  },
 });
