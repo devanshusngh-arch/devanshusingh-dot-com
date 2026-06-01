@@ -15,7 +15,7 @@ function computeGrade(d: BrandData): { letter: string; color: string; score: num
   const equityAvg = ((aaker.awareness||0) + (aaker.loyalty||0) + (aaker.quality||0) + (aaker.associations||0) + (aaker.assets||0)) / 5;
   const funnel = d.health_funnel || {};
   const funnelAvg = ((funnel.awareness||0) + (funnel.consideration||0) + (funnel.preference||0) + (funnel.purchase||0) + (funnel.loyalty||0)) / 5 / 10;
-  const availAvg = ((d.mental_availability || 0) + (d.physical_availability || 0)) / 2 / 10;
+  const availAvg = ((d.mental_availability || 0) + (d.physical_availability || 0)) / 2;
   const score = equityAvg * 0.4 + funnelAvg * 0.3 + availAvg * 0.3;
   const clamped = Math.round(Math.min(10, Math.max(0, score)) * 10) / 10;
   if (clamped >= 8.5) return { letter: "A", color: "#10b981", score: clamped };
