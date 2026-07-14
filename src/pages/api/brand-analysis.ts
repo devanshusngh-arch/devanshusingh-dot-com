@@ -4,7 +4,7 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   const apiKey = import.meta.env.ANTHROPIC_API_KEY;
-  const baseUrl = import.meta.env.ANTHROPIC_BASE_URL || "https://openrouter.ai/api";
+  const baseUrl = import.meta.env.ANTHROPIC_BASE_URL || "https://api.deepseek.com";
 
   if (!apiKey) {
     return new Response(
@@ -35,7 +35,7 @@ export const POST: APIRoute = async ({ request }) => {
         "Authorization": `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: "deepseek/deepseek-v4-flash",
+        model: "deepseek-chat",
         max_tokens: 4096,
         messages: rawMessages,
       }),
