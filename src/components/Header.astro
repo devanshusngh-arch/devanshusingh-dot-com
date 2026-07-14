@@ -13,7 +13,7 @@
  */
 
 interface Props {
-  active?: 'work' | 'resume' | 'contact';
+  active?: 'work' | 'resume' | 'marcus' | 'contact';
 }
 
 const { active } = Astro.props;
@@ -21,6 +21,7 @@ const { active } = Astro.props;
 const links = [
   { label: 'Work', href: '/work', key: 'work' },
   { label: 'Resume', href: '/resume', key: 'resume' },
+  { label: 'Marcus AI', href: '/brand-board', key: 'marcus' },
   { label: 'Contact', href: '/contact', key: 'contact' },
 ] as const;
 ---
